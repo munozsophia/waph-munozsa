@@ -92,7 +92,6 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 
 ### Apache Web Server Testing
 
-Include a **screenshot** to demonstrate that the Apache Web Server is running properly, as it can be accessed in Google Chrome within your Ubuntu VM, and in a browser on your laptop/computer using its IP address.
 ![Apache Web Server Ubuntu](https://github.com/munozsophia/waph-munozsa/blob/main/images/apache-ubuntu-vm.png)
 *Apache Web Server in Ubuntu VM*
 
@@ -103,15 +102,51 @@ Include a **screenshot** to demonstrate that the Apache Web Server is running pr
 
 ### The course repository
 
-Include a **screenshot** to show that you have cloned the course repository into the home directory in your VM.
+![Course Repository](https://github.com/munozsophia/waph-munozsa/blob/main/images/course-repo.png)
+*Cloned Course Repository*
 
 ### Private Repository
 
-Describe critical steps to create your private repository on [GitHub.com](https://github.com) and share it with `phung-waph`. Also, include this repository's full URL, e.g., [https://github.com/waph-phung/waph-phungph.git](https://github.com/waph-phung/waph-phungph.git).
+To create my private repository on [GitHub.com](https://github.com)
 
-Summarize hands-on exercises, such as generating SSH keys, adding the public key to your GitHub account, cloning your remote repository into your VM, and editing the README.md following the provided template with my headshot.
+> - Click the green `Create repository` button
+> - Name the repository with the following naming convention `waph-your-uc-username` \(`waph-munozsa`)
+> - Check off Private configuration
+> - Select `Add a README file`
+> - Choose license `Apache License 2.0`
 
-Include a **screenshot** to illustrate that you committed the changes from your VM to your remote repository.
+To share the repository with `phung-waph`
+
+> From the repository, click on:
+>
+> - settings -> collaborators -> add people
+> - type the username `phung-waph` and click the corresponding button
+
+This repository's full URL, [https://github.com/munozsophia/waph-munozsa.git](https://github.com/munozsophia/waph-munozsa.git).
+
+> #### Generating and Setting up SSH Keys
+>
+> - From the terminal: `$ ssh-keygen`
+> - Press Enter to accept the default location
+> - Enter and re-enter a passphrase when prompted \(this can be left blank)
+> - The key files are stored in `/.ssh` folder. To view the files: `$ ls ~/.ssh`
+> - To view and copy the key: `$ cat ~/.ssh/id_rsa.pub`
+> - Then select and copy
+>
+> To add the public key to GitHub account:
+>
+> - click on the account icon
+> - click settings -> SSH and GPG keys -> new ssh key
+> - name the key in Title, paste the copied key to Key
+> - click `Add SSH key`
+
+> #### Clone Private Repo to VM using SSH Key
+>
+> In home directory \(~), `$ git clone <url>` \(git@github.com:munozsophia/waph-munozsa.git)
+> Get URL from the repo overview, click Code -> SSH
+
+![Private Repository](https://github.com/munozsophia/waph-munozsa/blob/main/images/private-repo.png)
+*Committed changes to Private Repository*
 
 ## Submission
 
