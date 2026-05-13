@@ -16,7 +16,7 @@
 
 Repository's URL: [https://github.com/munozsophia/waph-munozsa.git](https://github.com/munozsophia/waph-munozsa.git)
 
-This is a private repository for Sophia Munoz to store all code from the course. The organization of this repository us as follows.
+This is a private repository for Sophia Munoz to store all code from the course. The organization of this repository is as follows.
 
 Latest update: May 13, 2026
 
