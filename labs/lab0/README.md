@@ -94,20 +94,20 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 
 ![Apache Web Server Ubuntu](https://github.com/munozsophia/waph-munozsa/blob/main/images/apache-ubuntu-vm.png)
 *Apache Web Server in Ubuntu VM*
-<img src="apache-ubuntu-vm.png" width="200">
+<img src="https://github.com/munozsophia/waph-munozsa/blob/main/images/apache-ubuntu-vm.png" width="800">
 
 ![Apache Web Server Laptop](https://github.com/munozsophia/waph-munozsa/blob/main/images/apache-laptop.png)
 *Apache Web Server in Laptop*
-<img src="apache-laptop.png" width="200">
+<img src="https://github.com/munozsophia/waph-munozsa/blob/main/images/apache-laptop.png" width="800">
 
 ## Part II - git Repositories and Exercises
 
 ### The course repository
 
-![Course Repository](https://github.com/munozsophia/waph-munozsa/blob/main/images/course-repo.png)
+<!--![Course Repository](https://github.com/munozsophia/waph-munozsa/blob/main/images/course-repo.png)-->
+<img src="https://github.com/munozsophia/waph-munozsa/blob/main/images/course-repo.png" width="800">
 
 *Cloned Course Repository*
-<img src="course-repo.png" width="200">
 
 ### Private Repository
 
@@ -151,7 +151,7 @@ This repository's full URL, [https://github.com/munozsophia/waph-munozsa.git](ht
 > Get URL from the repo overview, click Code -> SSH
 
 <!--![Private Repository](https://github.com/munozsophia/waph-munozsa/blob/main/images/private-repo.png)-->
-<img src="https://github.com/munozsophia/waph-munozsa/blob/main/images/private-repo.png" width="200">
+<img src="https://github.com/munozsophia/waph-munozsa/blob/main/images/private-repo.png" width="800">
 
 *Committed changes to Private Repository*
 
