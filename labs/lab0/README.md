@@ -150,10 +150,11 @@ This repository's full URL, [https://github.com/munozsophia/waph-munozsa.git](ht
 >
 > Get URL from the repo overview, click Code -> SSH
 
-![Private Repository](https://github.com/munozsophia/waph-munozsa/blob/main/images/private-repo.png)
+<!--![Private Repository](https://github.com/munozsophia/waph-munozsa/blob/main/images/private-repo.png)-->
+<img src="https://github.com/munozsophia/waph-munozsa/blob/main/images/private-repo.png" width="200">
 
 *Committed changes to Private Repository*
-<img src="private-repo.png" width="200">
+
 
 ## Submission
 
