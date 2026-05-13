@@ -10,7 +10,7 @@
 
 **Short-bio**: Sophia Munoz has interests in Computer Graphics and Web Application development.
 
-![Sophia's headshot](https://github.com/munozsophia/waph-munozsa/blob/main/images/headshot.jpg)
+![Sophia's headshot](/home/user/waph-munozsa/images/headshot.jpg)
 
 # Lab 0 - Development Environment Setup 
 
@@ -92,11 +92,11 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 
 ### Apache Web Server Testing
 
-<img src="https://github.com/munozsophia/waph-munozsa/blob/main/images/apache-ubuntu-vm.png" width="600">
+<img src="/home/user/waph-munozsa/images/apache-ubuntu-vm.png" width="600">
 
 *Apache Web Server in Ubuntu VM*
 
-<img src="https://github.com/munozsophia/waph-munozsa/blob/main/images/apache-laptop.png" width="600">
+<img src="/home/user/waph-munozsa/images/apache-laptop.png" width="600">
 
 *Apache Web Server in Laptop*
 
@@ -104,7 +104,7 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 
 ### The course repository
 
-<img src="https://github.com/munozsophia/waph-munozsa/blob/main/images/course-repo.png" width="500">
+<img src="/home/user/waph-munozsa/images/course-repo.png" width="500">
 
 *Cloned Course Repository*
 
@@ -149,7 +149,7 @@ This repository's full URL, [https://github.com/munozsophia/waph-munozsa.git](ht
 >
 > Get URL from the repo overview, click Code -> SSH
 
-<img src="https://github.com/munozsophia/waph-munozsa/blob/main/images/private-repo.png" width="500">
+<img src="/home/user/waph-munozsa/images/private-repo.png" width="500">
 
 *Committed changes to Private Repository*
 
