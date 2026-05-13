@@ -10,7 +10,7 @@
 
 **Short-bio**: Sophia Munoz has interests in Computer Graphics and Web Application development.
 
-![Sophia's headshot]
+![Sophia's headshot](https://github.com/munozsophia/waph-munozsa/blob/main/images/headshot.jpg)
 
 ## Repository Information
 
