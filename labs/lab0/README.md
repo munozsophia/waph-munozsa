@@ -47,33 +47,33 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 >
 > Now that the VM has an IP address accessible within the virtual network
 > 
-> At the command prompt, type 'sudo apt install net-tools'
-> type 'ifconfig' to view IP address
-
+> At the command prompt, type `sudo apt install net-tools`
+> type `ifconfig` to view IP address
+>
 > #### Apache Web Server Intallation
 >
-> At the command prompt, type '$ sudo apt install apache2'
-
+> At the command prompt, type `$ sudo apt install apache2`
+>
 > #### git Installation
 >
-> At the command prompt, type '$ sudo apt install git'
-
+> At the command prompt, type `$ sudo apt install git`
+>
 > #### Sublime Test Editor Installation
 >
-> At the command prompt, type '$ sudo snap install sublime-text --classic'
+> At the command prompt, type `$ sudo snap install sublime-text --classic`
 
 > #### pandoc Installation
 >
-> At the command prompt, type '$ sudo apt install pandoc'
+> At the command prompt, type `$ sudo apt install pandoc`
 >
 > #### pdflatex Installation
 >
-> Since 'pandoc' requires 'pdflatex' and its fronts to render files, type in the following:
+> Since `pandoc` requires `pdflatex` and its fronts to render files, type in the following:
 >
-> - '$ sudo apt-get install texlive-latex-base'
-> - '$ sudo apt-get install texlive-fonts-recommended'
-> - '$ sudo apt-get install texlive-latex-extra'
-> - '$ sudo apt-get install texlive-fonts-extra'
+> - `$ sudo apt-get install texlive-latex-base`
+> - `$ sudo apt-get install texlive-fonts-recommended`
+> - `$ sudo apt-get install texlive-latex-extra`
+> - `$ sudo apt-get install texlive-fonts-extra`
 
 > #### Google Chrome Installation
 >
@@ -84,7 +84,7 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 > 	- Click **Accept and Install**
 > - Open the Downloaded File
 > 	- Go to **Downloads**
-> 	- Double-click 'google-chrome-stable_current_amd64.deb'
+> 	- Double-click `google-chrome-stable_current_amd64.deb`
 > 	- It will open in **Ubuntu Software Center**
 > - Install Google Chrome
 > 	- Click Install
