@@ -93,7 +93,11 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 ### Apache Web Server Testing
 
 Include a **screenshot** to demonstrate that the Apache Web Server is running properly, as it can be accessed in Google Chrome within your Ubuntu VM, and in a browser on your laptop/computer using its IP address.
+![Apache Web Server Ubuntu](https://github.com/munozsophia/waph-munozsa/blob/main/images/apache-ubuntu-vm.png)
+*Apache Web Server in Ubuntu VM*
 
+![Apache Web Server Laptop](https://github.com/munozsophia/waph-munozsa/blob/main/images/apache-laptop.png)
+*Apache Web Server in Laptop*
 
 ## Part II - git Repositories and Exercises
 
