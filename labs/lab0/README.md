@@ -103,6 +103,7 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 ### The course repository
 
 ![Course Repository](https://github.com/munozsophia/waph-munozsa/blob/main/images/course-repo.png)
+
 *Cloned Course Repository*
 
 ### Private Repository
@@ -143,9 +144,11 @@ This repository's full URL, [https://github.com/munozsophia/waph-munozsa.git](ht
 > #### Clone Private Repo to VM using SSH Key
 >
 > In home directory \(~), `$ git clone <url>` \(git@github.com:munozsophia/waph-munozsa.git)
+>
 > Get URL from the repo overview, click Code -> SSH
 
 ![Private Repository](https://github.com/munozsophia/waph-munozsa/blob/main/images/private-repo.png)
+
 *Committed changes to Private Repository*
 
 ## Submission
