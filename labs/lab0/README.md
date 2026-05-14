@@ -149,7 +149,7 @@ This repository's full URL, [https://github.com/munozsophia/waph-munozsa.git](ht
 >
 > Get URL from the repo overview, click Code -> SSH
 
-<img src="/waph-munozsa/images/private-repo.png" width="500">
+<img src="../../images/private-repo.png" width="500">
 
 *Committed changes to Private Repository*
 
