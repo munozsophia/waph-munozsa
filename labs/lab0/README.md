@@ -10,7 +10,7 @@
 
 **Short-bio**: Sophia Munoz has interests in Computer Graphics and Web Application development.
 
-![Sophia's headshot](/home/user/waph-munozsa/images/headshot.jpg)
+![Sophia's headshot](../../images/headshot.jpg)
 
 # Lab 0 - Development Environment Setup 
 
@@ -92,11 +92,11 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 
 ### Apache Web Server Testing
 
-<img src="/home/user/waph-munozsa/images/apache-ubuntu-vm.png" width="600">
+<img src="../../images/apache-ubuntu-vm.png" width="600">
 
 *Apache Web Server in Ubuntu VM*
 
-<img src="/home/user/waph-munozsa/images/apache-laptop.png" width="600">
+<img src="../../images/apache-laptop.png" width="600">
 
 *Apache Web Server in Laptop*
 
@@ -104,7 +104,7 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 
 ### The course repository
 
-<img src="/home/user/waph-munozsa/images/course-repo.png" width="500">
+<img src="../../images/course-repo.png" width="500">
 
 *Cloned Course Repository*
 
