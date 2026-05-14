@@ -92,17 +92,17 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 
 ### Apache Web Server Testing
 
-![Apache Web Server in Ubuntu VM](../../images/apache-ubuntu-vm.png){ width=600px }
+![Apache Web Server in Ubuntu VM](../../images/apache-ubuntu-vm.png)
 *Apache Web Server in Ubuntu VM*
 
-![Apache Web Server in Laptop](../../images/apache-laptop.png){ width=600px }
+![Apache Web Server in Laptop](../../images/apache-laptop.png)
 *Apache Web Server in Laptop*
 
 ## Part II - git Repositories and Exercises
 
 ### The course repository
 
-![Cloned Course Repository](../../images/course-repo.png){ width=500px }
+![Cloned Course Repository](../../images/course-repo.png)
 *Cloned Course Repository*
 
 ### Private Repository
@@ -146,7 +146,7 @@ This repository's full URL, [https://github.com/munozsophia/waph-munozsa.git](ht
 >
 > Get URL from the repo overview, click Code -> SSH
 
-![Committed changes to Private Repository](../../images/private-repo.png){ width=500px }
+![Committed changes to Private Repository](../../images/private-repo.png)
 *Committed changes to Private Repository*
 
 
