@@ -103,6 +103,7 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 ### The course repository
 
 ![Cloned Course Repository](../../images/course-repo.png)
+
 *Cloned Course Repository*
 
 ### Private Repository
@@ -147,6 +148,7 @@ This repository's full URL, [https://github.com/munozsophia/waph-munozsa.git](ht
 > Get URL from the repo overview, click Code -> SSH
 
 ![Committed changes to Private Repository](../../images/private-repo.png)
+
 *Committed changes to Private Repository*
 
 
