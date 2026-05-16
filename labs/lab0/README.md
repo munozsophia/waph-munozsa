@@ -14,25 +14,14 @@
 
 # Lab 0 - Development Environment Setup 
 
-## Overview 
+## The Lab's Overview
 
-This lab is covered in Lecture 2, with preparation homework in Lecture 1. In Part I, you need to set up an Ubuntu 22.04 Virtual Machine on VirtualBox and install software and applications. In Part II, you will clone the course repository and your private repository and complete the `git` exercises to write the report.
+For Lab0 there were two parts. Part I is setting up the Ubuntu 22.04 Virtual Machine through VirtualBox and installing all the applications necessary \(e.g. net-tools, apache web server, git, sublime, pandoc, pdflatex, and Google Chrome). Part II entailed cloning the course repository and creating a private repository. This included following the git instructions to successfully complete the Lab0 report.
 
-
-## Report 
-
-You need to create a sub-folder `labs/lab0` with a README.md file to write the report in Markdown format and generate the report to PDF using the `pandoc` application. Your report should follow the template provided in Lecture 2 ([https://github.com/waph-phung/waph/blob/main/README-template.md](https://github.com/waph-phung/waph/blob/main/README-template.md)), which should include the course name and instructor, your name and email, together with your headshot (150x150 pixels), and then the following sub-sections:
-
-## The lab's overview
-
-Write an overview of the lab.
-
-Also, include a direct clickable link to the lab folder on GitHub.com so that it can be viewed when grading, for example,  [https://github.com/munozsophia/waph-munozsa/blob/main/labs/lab0](https://github.com/munozsophia/waph-munozsa/blob/main/labs/lab0).
+Lab0 Folder: [https://github.com/munozsophia/waph-munozsa/blob/main/labs/lab0](https://github.com/munozsophia/waph-munozsa/blob/main/labs/lab0).
 
 
 ## Part I - Ubuntu Virtual Machine & Software Installation
-
-A summary of the steps you have performed to set up the Ubuntu 22.04 virtual machine and install the required software and applications.
 
 > #### Ubuntu 22.04 Virtual Machine Setup
 >
@@ -81,7 +70,7 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 > 	- Open Firefox
 > 	- Visit the [Google Chrome download](https://www.google.com/chrome/?platform=linux) page
 > 	- Select **64-bit.deb** \(For Debian/Ubuntu)
-> 	- Click **Accept and Install**
+> 	- Click **Install** button
 > - Open the Downloaded File
 > 	- Go to **Downloads**
 > 	- Double-click `google-chrome-stable_current_amd64.deb`
@@ -100,7 +89,7 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 
 ## Part II - git Repositories and Exercises
 
-### The course repository
+### Course Repository
 
 ![Cloned Course Repository](../../images/course-repo.png)
 
@@ -108,7 +97,7 @@ A summary of the steps you have performed to set up the Ubuntu 22.04 virtual mac
 
 ### Private Repository
 
-To create my private repository on [GitHub.com](https://github.com)
+The steps I took to create my private repository on [GitHub.com](https://github.com):
 
 > - Click the green `Create repository` button
 > - Name the repository with the following naming convention `waph-your-uc-username` \(`waph-munozsa`)
@@ -116,29 +105,29 @@ To create my private repository on [GitHub.com](https://github.com)
 > - Select `Add a README file`
 > - Choose license `Apache License 2.0`
 
-To share the repository with `phung-waph`
+To share the repository with Instructor `phung-waph`
 
-> From the repository, click on:
+> From the private repository, click on:
 >
 > - settings -> collaborators -> add people
-> - type the username `phung-waph` and click the corresponding button
+> - type user `phung-waph` and add it
 
-This repository's full URL, [https://github.com/munozsophia/waph-munozsa.git](https://github.com/munozsophia/waph-munozsa.git).
+This repository's full URL is [https://github.com/munozsophia/waph-munozsa.git](https://github.com/munozsophia/waph-munozsa.git).
 
 > #### Generating and Setting up SSH Keys
 >
 > - From the terminal: `$ ssh-keygen`
-> - Press Enter to accept the default location
-> - Enter and re-enter a passphrase when prompted \(this can be left blank)
+> - Press Enter: accepting default location
+> - Enter/re-enter a passphrase when terminal asks \(can be blank too)
 > - The key files are stored in `/.ssh` folder. To view the files: `$ ls ~/.ssh`
 > - To view and copy the key: `$ cat ~/.ssh/id_rsa.pub`
 > - Then select and copy
 >
-> To add the public key to GitHub account:
+> To add the public key to a GitHub account:
 >
-> - click on the account icon
-> - click settings -> SSH and GPG keys -> new ssh key
-> - name the key in Title, paste the copied key to Key
+> - Click account profile
+> - Click settings -> SSH and GPG keys -> new ssh key
+> - Title the key and paste the copied key to the Key section
 > - click `Add SSH key`
 
 > #### Clone Private Repo to VM using SSH Key
@@ -150,12 +139,3 @@ This repository's full URL, [https://github.com/munozsophia/waph-munozsa.git](ht
 ![Committed changes to Private Repository](../../images/private-repo.png)
 
 *Committed changes to Private Repository*
-
-
-## Submission
-
-Use the `pandoc` tool to generate the PDF report for submission from the `README.md` file, and ensure the report and contents are rendered properly.
-
-**Note**: If you face the issue that figures are not rendered in preferred positions, use option `-f markdown-implicit_figures -t pdf` to disable the default `implicit_figures` option in pandoc
-
-The PDF file should be named `your-username-waph-lab0.pdf`, e.g., `phungph-waph-lab0.pdf` 
