@@ -57,18 +57,17 @@ My solution to this issue was to capture the packets by running `curl http://exa
 
 I used the telnet program to send a minimal HTTP Request through the terminal while capturing packets in Wireshark. The HTTP Request and Response was different compared to Task 1 as the amount of data taken was much less, especially for the HTTP Request.
 
-  1. By typing in `telnet example.com 80`, I connect to the server through port 80. Then by typing in the minimal HTTP Request as below, I receive the HTTP Response.
+  1. By typing in `telnet example.com 80`, I connected to the server through port 80. Then by typing in the minimal HTTP Request as below, I received the HTTP Response.
   ![HTTP telnet Terminal Request and Response](../../images/http-telnet-terminal.png)
   *HTTP telnet Terminal Request and Response*
 
   2. There is a difference between this HTTP Request message and the one sent by the browser in Task 1. The fields missing in this request are all except `GET /index.html HTTP/1.1` and `Host: example.com`.
   ![HTTP telnet Wireshark Request](../../images/http-telnet-request.png)
   *HTTP telnet Wireshark Request*
-
   ![HTTP telnet Wireshark Stream](../../images/http-telnet-stream.png)
   *HTTP telnet Wireshark Stream*
 
-  3. There isn't as much difference between the telnet HTTP Response message and the browser HTTP Response message from Task 1. But the Task message hold more information on cache-control, last-modified, content-encoding, and more.
+  3. There isn't as much difference between the telnet HTTP Response message and the browser HTTP Response message from Task 1. But the Task 1 message hold more information on cache-control, last-modified, content-encoding, and more.
   ![HTTP telnet Wireshark Response](../../images/http-telnet-response.png)
   *HTTP telnet Wireshark Response*
 
