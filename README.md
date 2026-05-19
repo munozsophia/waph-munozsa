@@ -24,6 +24,9 @@ Latest update: May 13, 2026
 
 [Hands-on exercises in lectures](labs)
 
+- [Lab 0](labs/lab0): Development Environment Setup
+- [Lab 1](labs/lab1): Foundations of the Web
+
 ### Hackathons
 
 Hands-on hacking exercises

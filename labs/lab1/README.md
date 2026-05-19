@@ -8,8 +8,6 @@
 
 **Email**: [mailto:munozsa@mail.uc.edu](munozsa@mail.uc.edu)
 
-**Short-bio**: Sophia Munoz has interests in Computer Graphics and Web Application development.
-
 ![Sophia's headshot](../../images/headshot.jpg)
 
 # Lab 1 - Foundations of the Web 
@@ -25,26 +23,37 @@
    2. Task 2 (10 pts). A simple PHP Web Application with user input.
    3. Task 3 (10 pts). Understanding HTTP GET and POST requests
 
-Follow the detailed instructions in Lecture 3's slides with a hands-on demonstration during the class to complete this lab.
-
 ## Report and deliverables
 
-As prepared in [Lab 0](../lab0), you need to create a sub-folder `labs/lab1` with a README.md file to write a report in Markdown format and generate the report to PDF using the `pandoc` application. All of the code from this lab must also be stored in this folder and included in the report if required. **Please note that the required screenshots must include your virtual machine name or your name with proper captions and be visible, e.g., not too blurry, for grading**. Your report should follow the template provided in Lecture 2 ([https://github.com/waph-phung/waph/blob/main/README-template.md](https://github.com/waph-phung/waph/blob/main/README-template.md)) which should include the course name and instructor, your name and email, together with your headshot (150x150 pixels), and the following sub-sections:
+enerate the report to PDF using the `pandoc` application. All of the code from this lab must also be stored in this folder and included in the report if required. **Please note that the required screenshots must include your virtual machine name or your name with proper captions and be visible, e.g., not too blurry, for grading**. Your report should follow the template provided in Lecture 2 ([https://github.com/waph-phung/waph/blob/main/README-template.md](https://github.com/waph-phung/waph/blob/main/README-template.md))
 
-## The lab's overview
+## The Lab's Overview
 
-**(0 pts, -3pts if missing)**
+For Lab1 there were two parts. Part I has two tasks. The first is getting familiar with Wireshark and the use of the HTTP protocol within this tool. For this task I downloaded Wireshark through the terminal and started capturing packets. For task 2, . Part II had three tasks.
 
-Write an overview of the lab and the outcomes you learned from this lab.
+Outcomes I learned from this lab are
 
-Also, include a direct clickable link to the lab folder on GitHub.com so that it can be viewed when grading, for example,  [https://github.com/waph-phung/waph-phungph/tree/main/labs/lab1](https://github.com/waph-phung/waph-phungph/tree/main/labs/lab1).
+Lab1 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab1](https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab1).
 
 
 ## Part I - The Web and HTTP Protocol
 
 ### Task 1. Familiar with the Wireshark tool and HTTP protocol
 
-Write a summary of how you used the Wireshark tool to examine the HTTP protocol **(2.5 pts)** and demonstrate with three screenshots of the HTTP Request, Response messages, and HTTP Stream with proper captions **(2.5 pts each)**.   
+I used the Wireshark tool to capture packets. When I typed in the website [http://example.com/index.html](http://example.com/index.html), Wireshark captured the HTTP Request and Response of the Browser and Server interacting.
+
+I was able to successfully run the tool once, before I exited out of the tool and screenshotted the HTTP results. I made sure to follow the lecture instructions of deleting cache and browser history. Unfortunately, this did not work. Wireshark wasn't able to capture http protocol packets again. Based on my research, this was due to the fact that when I put the link in my browser, the server at example.com automatically redirects the **http://** request to **https://**.
+
+My solution to this issue was to capture the packets by running `curl http://example.com/index.html` in the terminal. This way prevents any redirection from happening. In this case it was a successful attempt and I was able to filter the HTTP protocol packets. Given this in context, my HTTP results are a little different.
+
+![HTTP Request Message](../../images/http-request.png)
+*HTTP Request Message in Wireshark*
+
+![HTTP Response Message](../../images/http-response.png)
+*HTTP Response Message in Wireshark*
+
+![HTTP Stream in Wireshark](../../images/http-stream.png)
+*HTTP Stream in Wireshark*
 
 ### Task 2. Understanding HTTP using telnet and Wireshark
 
