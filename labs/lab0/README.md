@@ -8,8 +8,6 @@
 
 **Email**: [mailto:munozsa@mail.uc.edu](munozsa@mail.uc.edu)
 
-**Short-bio**: Sophia Munoz has interests in Computer Graphics and Web Application development.
-
 ![Sophia's headshot](../../images/headshot.jpg)
 
 # Lab 0 - Development Environment Setup 

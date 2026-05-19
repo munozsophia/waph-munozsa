@@ -23,9 +23,7 @@
    2. Task 2 (10 pts). A simple PHP Web Application with user input.
    3. Task 3 (10 pts). Understanding HTTP GET and POST requests
 
-## Report and deliverables
-
-enerate the report to PDF using the `pandoc` application. All of the code from this lab must also be stored in this folder and included in the report if required. **Please note that the required screenshots must include your virtual machine name or your name with proper captions and be visible, e.g., not too blurry, for grading**. Your report should follow the template provided in Lecture 2 ([https://github.com/waph-phung/waph/blob/main/README-template.md](https://github.com/waph-phung/waph/blob/main/README-template.md))
+generate the report to PDF using the `pandoc` application. All of the code from this lab must also be stored in this folder and included in the report if required.
 
 ## The Lab's Overview
 
@@ -57,11 +55,22 @@ My solution to this issue was to capture the packets by running `curl http://exa
 
 ### Task 2. Understanding HTTP using telnet and Wireshark
 
-Summarize how you used the telnet program to send a minimal HTTP Request and the Wireshark tool to examine the HTTP messages **(2.5 pts)**. Demonstrate the tasks with the following screenshots, with proper captions and explanations:
+I used the telnet program to send a minimal HTTP Request through the terminal while capturing packets in Wireshark. The HTTP Request and Response was different compared to Task 1 as the amount of data taken was much less, especially for the HTTP Request.
 
-  1. A screenshot of your terminal showing the HTTP Request (you typed) and HTTP response from the server. **(2.5 pts)**
-  2. A screenshot of the HTTP Request message (you typed in telnet above) in Wireshark, as in Task 1. Is there any difference between this HTTP Request message and the one the browser sent in Task 1? Hints: What fields are missing in this request compared to the one the browser sent? **(2.5 pts)**
-  3. A screenshot of the HTTP Response message in Wireshark shows  that the server responded to your request. Is there any difference between this HTTP Response message and the one in Task 1? **(2.5 pts)**
+  1. By typing in `telnet example.com 80`, I connect to the server through port 80. Then by typing in the minimal HTTP Request as below, I receive the HTTP Response.
+  ![HTTP telnet Terminal Request and Response](../../images/http-telnet-terminal.png)
+  *HTTP telnet Terminal Request and Response*
+
+  2. There is a difference between this HTTP Request message and the one sent by the browser in Task 1. The fields missing in this request are all except `GET /index.html HTTP/1.1` and `Host: example.com`.
+  ![HTTP telnet Wireshark Request](../../images/http-telnet-request.png)
+  *HTTP telnet Wireshark Request*
+
+  ![HTTP telnet Wireshark Stream](../../images/http-telnet-stream.png)
+  *HTTP telnet Wireshark Stream*
+
+  3. There isn't as much difference between the telnet HTTP Response message and the browser HTTP Response message from Task 1. But the Task message hold more information on cache-control, last-modified, content-encoding, and more.
+  ![HTTP telnet Wireshark Response](../../images/http-telnet-response.png)
+  *HTTP telnet Wireshark Response*
 
 ## Part II - Basic Web Application Programming
 
