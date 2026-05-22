@@ -10,7 +10,7 @@
 
 ![Sophia's headshot](../../images/headshot.jpg)
 
-# Lab 1 - Foundations of the Web 
+# Lab 2 - Front-end Web Development
 
 ## The Lab's Overview
 
@@ -18,10 +18,10 @@ For Lab1 there were two parts. Part I has two tasks. The first is getting famili
 
 Outcomes I learned from this lab are the many different way to develop and deploy web applications to an apache web server. From telnet, CGI and PHP, know how they interact with the web server helped me have a much deeper understanding of web application development and potential security risks in their implementation.
 
-Lab1 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab1](https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab1).
+Lab2 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab2](https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab2).
 
 
-## Part I - The Web and HTTP Protocol
+## Part I - HTML and Webpage Development with Basic HTML Tags
 
 ### Task 1. Familiar with the Wireshark tool and HTTP protocol
 
@@ -62,7 +62,7 @@ I used the telnet program to send a minimal HTTP Request through the terminal wh
   ![HTTP telnet Wireshark Response](../../images/http-telnet-response.png)
   *HTTP telnet Wireshark Response*
 
-## Part II - Basic Web Application Programming
+## Part II - Front-end Web Development with Basic JavaScript
 
 ###   Task 1. CGI Web applications in C
 
