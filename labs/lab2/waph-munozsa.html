@@ -12,7 +12,33 @@
 	</div>
 	<div id="menubar">
 		<h3>Student: Sophia Munoz</h3>
+		<div id="email" onclick="showhideEmail()">Show my email</div>
+		<script src="email.js"></script>
 		<img src="images/headshot.jpg" alt="My headshot" width="50">
+		<div id="digit-clock"></div>
+		<script type="text/javascript">
+			function displayTime() {
+				document.getElementById('digit-clock').innerHTML = "Current time:" + new Date();
+			}
+			setInterval(displayTime, 500);
+			
+		</script>
+		<canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+		<script src="https://waph-phung.github.io/clock.js"></script>
+		<script>
+			var canvas = document.getElementById("analog-clock");
+			var ctx = canvas.getContext("2d");
+			var radius = canvas.height / 2;
+			ctx.translate(radius, radius);
+			radius = radius * 0.90;
+			setInterval(drawClock, 1000);
+			
+			function drawClock() {
+				drawFace(ctx, radius);
+				drawNumbers(ctx, radius);
+				drawTime(ctx, radius);
+			}
+		</script>
 	</div>
 	<div id="main">
 		<p>A simple HTML page</p>
@@ -29,10 +55,14 @@
 		<div>
 			<i>Form with an HTTP POST Request</i>
 			<form action="/echo.php" method="POST" name="echo_post">
-				Your input: <input name="data">
+				Your input: <input name="data" onkeypress="console.log('You have pressed a key')">
 				<input type="submit" name="Submit">
 			</form>
 		</div>
+		<hr>
+		<b>Experiments with JavaScript code</b><br>
+		<i>Inlined JavaScript</i>
+		<div id="date" onclick="document.getElementById('date').innerHTML=Date()">Click here to show Date()</div>
 	</div>
 </body>
 </html>
