@@ -105,7 +105,7 @@ a. To develop a `helloworld.php` PHP page, I created the file and coded in the s
 ![PHP helloworld Program](../../images/php-program-helloworld.png)
 *PHP helloworld Program*
 
-b. To develop the `echo.php` PHP page, I created the file and instead of the string, I used the global variable `$_REQUEST[..]`. This is able to get input from an HTTP Request. This means there is vulnerabilities for attackers to exploit since the global variable handles both HTTP GET and POST. It poses a security risk due to its convenient model. To deploy the program, I copied the program to the webserver root directory `/var/www/html` and I typed `localhost/echo.php?data=Sophia Munoz`.
+b. To develop the `echo.php` PHP page, I created the file and instead of the string, I used the global variable `$_REQUEST[..]`. This is able to get input from an HTTP Request. This means there is vulnerabilities for attackers to exploit since the global variable handles both HTTP GET and POST. It poses a security risk due to its convenient model. Due to Cross-Site Scripting (XSS), malicious scripts can easily be accessed by a user that can essentially access private information held by the web application. To deploy the program, I copied the program to the webserver root directory `/var/www/html` and I typed `localhost/echo.php?data=Sophia Munoz`.
 
 Included file `echo.php`:
 ```PHP
