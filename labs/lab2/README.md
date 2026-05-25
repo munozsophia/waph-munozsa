@@ -24,19 +24,59 @@ Lab2 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab2](h
 
 ####  a. HTML
   
-I developed the `waph-munozsa.html` file with basic tags, my headshot, and a form. I created a new images folder within the Lab 2 folder.
+I developed the `waph-munozsa.html` file with basic tags, my headshot, and a form. For this lab I created a new images folder within the Lab 2 folder so that the webpage can access my `headshot.jpg` file.
 
-To view this web app I ran:
+To format the headshot within the webpage to 50 pixels, I entered `<img src="images/headshot.jpg" alt="My headshot" width="50">`.
+
+![HTML Page with Headshot Image](../../images.html-headshot.png)
+*HTML Page with Headshot Image*
+
+To add the user input forms to the webpage I used the <form> tag and <input> element with the code below to handle and display the user input to the `echo.php` web application.
+
+```html
+<b>Interaction with forms</b>
+<div>
+   <i>Form with an HTTP GET Request</i>
+   <form action="/echo.php" method="GET">
+      Your input: <input name="data">
+      <input type="submit" name="Submit">
+   </form>
+</div>
+<div>
+   <i>Form with an HTTP POST Request</i>
+   <form action="/echo.php" method="POST" name="echo_post">
+      Your input: <input name="data" onkeypress="console.log('You have pressed a key')">
+      <input type="submit" name="Submit">
+   </form>
+</div>
+```
+
+![HTTP GET Request Input](../../images/html-get-request-input.png)
+
+*HTTP GET Request Input*
+
+![HTTP GET Request Output](../../images/html-get-request-output.png)
+
+*HTTP GET Request Output*
+
+![HTTP POST Request Input](../../images/html-post-request-input.png)
+
+*HTTP POST Request Input*
+
+![HTTP POST Request Output](../../images/html-post-request-output.png)
+
+*HTTP POST Request Output*
+
+To view this webpage I ran:
 
 - `$ sudo cp waph-munozsa.html /var/www/html` to deploy HTML page to web server root
 - `$ sudo cp -R images/ /var/www/html` to deploy image to web server root
 
 ![HTML Deployment Commands in Terminal](../../images/html-deploy-commands.png)
+
 *HTML Deployment Commands in Terminal*
 
-I entered `localhost/waph-munozsa.html` in the browser.
-
-
+I then entered `localhost/waph-munozsa.html` in the browser. With the webpage rendered this what it looks like with my headshot and the form.
   
 ####  b. Simple JavaScript
 
