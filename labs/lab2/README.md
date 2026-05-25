@@ -31,7 +31,8 @@ To view this web app I ran:
 - `$ sudo cp waph-munozsa.html /var/www/html` to deploy HTML page to web server root
 - `$ sudo cp -R images/ /var/www/html` to deploy image to web server root
 
-
+![HTML Deployment Commands in Terminal](../../images/html-deploy-commands.png)
+*HTML Deployment Commands in Terminal*
 
 I entered `localhost/waph-munozsa.html` in the browser.
 
