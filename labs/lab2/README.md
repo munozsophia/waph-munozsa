@@ -28,10 +28,10 @@ I developed the `waph-munozsa.html` file with basic tags, my headshot, and a for
 
 To format the headshot within the webpage to 50 pixels, I entered `<img src="images/headshot.jpg" alt="My headshot" width="50">`.
 
-![HTML Page with Headshot Image](../../images.html-headshot.png)
+![HTML Page with Headshot Image](../../images/html-headshot.png)
 *HTML Page with Headshot Image*
 
-To add the user input forms to the webpage I used the <form> tag and <input> element with the code below to handle and display the user input to the `echo.php` web application.
+To add the user input forms to the webpage I used the \<form> tag and \<input> element with the code below to handle and display the user input to the `echo.php` web application.
 
 ```html
 <b>Interaction with forms</b>
@@ -67,6 +67,8 @@ To add the user input forms to the webpage I used the <form> tag and <input> ele
 
 *HTTP POST Request Output*
 
+As you can see from the images above the data can be seen in the URL for the HTTP GET Request, unlike the HTTP POST Request where the data is in the HTTP Headers.
+
 To view this webpage I ran:
 
 - `$ sudo cp waph-munozsa.html /var/www/html` to deploy HTML page to web server root
@@ -77,6 +79,9 @@ To view this webpage I ran:
 *HTML Deployment Commands in Terminal*
 
 I then entered `localhost/waph-munozsa.html` in the browser. With the webpage rendered this what it looks like with my headshot and the form.
+
+![HTML Headshot and Form Webpage](../../images/html-headshot-form.jpg)
+*HTML Headshot and Form Webpage*
   
 ####  b. Simple JavaScript
 
