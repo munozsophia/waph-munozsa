@@ -81,6 +81,7 @@ To view this webpage I ran:
 I then entered `localhost/waph-munozsa.html` in the browser. With the webpage rendered this what it looks like with my headshot and the form.
 
 ![HTML Headshot and Form Webpage](../../images/html-headshot-form.png)
+
 *HTML Headshot and Form Webpage*
   
 ####  b. Simple JavaScript
