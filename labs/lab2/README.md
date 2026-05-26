@@ -92,10 +92,12 @@ I then entered `localhost/waph-munozsa.html` in the browser. With the webpage re
 
 Write the JavaScript code in your HTML page: 
 
- - Inline JavaScript code in HTML tags to display the current date/time when clicked (2 pts) and to log when a key is pressed.
+ - The following is the inline JavaScript code for displaying time and keypress.
 
  ![HTML JavaScript Inline Code Displaying Time](../../images/html-javascript-date.png)
  *HTML JavaScript Inline Code Displaying Time*
+
+Below is the inline JavaScript code that displays the time and date when it is clicked by the user.
 
 ```html
 <b>Experiments with JavaScript code</b><br>
@@ -111,6 +113,8 @@ Write the JavaScript code in your HTML page:
 
 *HTML JavaScript After Click*
 
+Below is the inline JavaScript code to log when a key is pressed in the POST method.
+
 ```html
 <form action="/echo.php" method="POST" name="echo_post">
    Your input: <input name="data" onkeypress="console.log('You have pressed a key')">
@@ -121,9 +125,24 @@ Write the JavaScript code in your HTML page:
 ![HTML JavaScript on keypress](../../images/html-javascript-keypress.png)
 *HTML JavaScript on keypress*
 
- - JavaScript code in a \<script> tag to display a digital clock (2 pts)
+ - Below I used the \<script> tag to display the digit clock below my headshot.
 
- - JavaScript code in a JavaScript file and code in the HTML page to show/hide your email when clicked. (4 pts)
+```html
+<div id="digit-clock"></div>
+<script type="text/javascript">
+   function displayTime() {
+      document.getElementById('digit-clock').innerHTML = "Current time:" + new Date();
+   }
+   setInterval(displayTime, 500);
+</script>
+```
+
+![HTML JavaScript Digit Clock Closer Look](../../images/html-javascript-digit-clock-img.png)
+
+![HTML JavaScript Digit Clock](../../images/html-javascript-digit-clock.png)
+*HTML JavaScript Digit Clock*
+
+ - JavaScript code in a JavaScript file and code in the HTML page to show/hide your email when clicked.
 
  - Display an analog clock using an external JavaScript code and code in your HTML page. (5 pts) 
 
