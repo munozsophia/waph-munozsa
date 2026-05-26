@@ -14,7 +14,7 @@
 
 ## The Lab's Overview
 
-For Lab2 there were two parts. Part I
+For Lab2 there were two tasks. Task 1 has two parts. Part `a` was creating webpages with the basic HTML tags. The webpage implemented used basic HTML tags with forms and an adjusted image. For Part `b`, I used simple JavaScript code within the HTML file to 
 
 Outcomes I learned from this lab were
 
@@ -24,14 +24,14 @@ Lab2 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab2](h
 
 ####  a. HTML
   
-I developed the `waph-munozsa.html` file with basic tags, my headshot, and a form. For this lab I created a new images folder within the Lab 2 folder so that the webpage can access my `headshot.jpg` file.
+I developed the `waph-munozsa.html` file with basic tags, my headshot, and two forms for user input. For this lab I created a new images folder within the Lab 2 folder so that the webpage can access my `headshot.jpg` file.
 
 To format the headshot within the webpage to 50 pixels, I entered `<img src="images/headshot.jpg" alt="My headshot" width="50">`.
 
 ![HTML Page with Headshot Image](../../images/html-headshot.png)
 *HTML Page with Headshot Image*
 
-To add the user input forms to the webpage I used the \<form> tag and \<input> element with the code below to handle and display the user input to the `echo.php` web application.
+To add the user input forms to the webpage, I used the \<form> tag and \<input> element with the code below to handle and display the user input to the `echo.php` web application.
 
 ```html
 <b>Interaction with forms</b>
@@ -51,6 +51,7 @@ To add the user input forms to the webpage I used the \<form> tag and \<input> e
 </div>
 ```
 
+
 ![HTTP GET Request Input](../../images/html-get-request-input.png)
 
 *HTTP GET Request Input*
@@ -67,7 +68,7 @@ To add the user input forms to the webpage I used the \<form> tag and \<input> e
 
 *HTTP POST Request Output*
 
-As you can see from the images above the data can be seen in the URL for the HTTP GET Request, unlike the HTTP POST Request where the data is in the HTTP Headers.
+As you can see from the images above, the data can be seen in the URL for the HTTP GET Request unlike the HTTP POST Request where the data is in the HTTP Headers.
 
 To view this webpage I ran:
 
@@ -88,7 +89,28 @@ I then entered `localhost/waph-munozsa.html` in the browser. With the webpage re
 
 Write the JavaScript code in your HTML page: 
 
- - Inline JavaScript code in HTML tags to display the current date/time when clicked (2 pts) and to log when a key is pressed (2 pts). 
+ - Inline JavaScript code in HTML tags to display the current date/time when clicked (2 pts) and to log when a key is pressed.
+
+ ![HTML JavaScript Inline Code Displaying Time](../../images/html-javascript-date)
+ *HTML JavaScript Inline Code Displaying Time*
+
+```html
+<b>Experiments with JavaScript code</b><br>
+<i>Inlined JavaScript</i>
+<div id="date" onclick="document.getElementById('date').innerHTML=Date()">Click here to show Date()</div>
+```
+
+
+![HTML JavaScript Before Click](../../images/html-javascript-before-click.png)
+
+*HTML JavaScript Before Click*
+
+![HTML JavaScript After Click](../../images/html-javascript-after-click.png)
+
+*HTML JavaScript After Click*
+
+![HTML JavaScript on keypress](../../images/html-javascript-keypress.png)
+*HTML JavaScript on keypress*
 
  - JavaScript code in a \<script> tag to display a digital clock (2 pts)
 
