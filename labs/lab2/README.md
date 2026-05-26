@@ -44,8 +44,8 @@ To add the user input forms to the webpage, I used the \<form> tag and \<input> 
 </div>
 <div>
    <i>Form with an HTTP POST Request</i>
-   <form action="/echo.php" method="POST" name="echo_post">
-      Your input: <input name="data" onkeypress="console.log('You have pressed a key')">
+   <form action="/echo.php" method="POST">
+      Your input: <input name="data">
       <input type="submit" name="Submit">
    </form>
 </div>
@@ -110,6 +110,13 @@ Write the JavaScript code in your HTML page:
 ![HTML JavaScript After Click](../../images/html-javascript-after-click.png)
 
 *HTML JavaScript After Click*
+
+```html
+<form action="/echo.php" method="POST" name="echo_post">
+   Your input: <input name="data" onkeypress="console.log('You have pressed a key')">
+   <input type="submit" name="Submit">
+</form>
+```
 
 ![HTML JavaScript on keypress](../../images/html-javascript-keypress.png)
 *HTML JavaScript on keypress*
