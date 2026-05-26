@@ -51,7 +51,6 @@ To add the user input forms to the webpage, I used the \<form> tag and \<input> 
 </div>
 ```
 
-
 ![HTTP GET Request Input](../../images/html-get-request-input.png)
 
 *HTTP GET Request Input*
@@ -91,7 +90,7 @@ Write the JavaScript code in your HTML page:
 
  - Inline JavaScript code in HTML tags to display the current date/time when clicked (2 pts) and to log when a key is pressed.
 
- ![HTML JavaScript Inline Code Displaying Time](../../images/html-javascript-date)
+ ![HTML JavaScript Inline Code Displaying Time](../../images/html-javascript-date.png)
  *HTML JavaScript Inline Code Displaying Time*
 
 ```html
@@ -99,7 +98,6 @@ Write the JavaScript code in your HTML page:
 <i>Inlined JavaScript</i>
 <div id="date" onclick="document.getElementById('date').innerHTML=Date()">Click here to show Date()</div>
 ```
-
 
 ![HTML JavaScript Before Click](../../images/html-javascript-before-click.png)
 
