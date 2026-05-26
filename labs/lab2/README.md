@@ -153,9 +153,32 @@ Below is the inline JavaScript code to log when a key is pressed in the POST met
 *HTML JavaScript Email Webpage*
 
 ![HTML JavaScript Email Clicked](../../images/html-javascript-email-clicked.png)
+
 *HTML JavaScript Email Clicked*
 
- - Display an analog clock using an external JavaScript code and code in your HTML page. (5 pts) 
+ - Below I implemented the code below from an external source of JavaScript code to display an analog clock.
+
+ ```html
+ <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+ <script src="https://waph-phung.github.io/clock.js"></script>
+ <script>
+    var canvas = document.getElementById("analog-clock");
+    var ctx = canvas.getContext("2d");
+    var radius = canvas.height / 2;
+    ctx.translate(radius, radius);
+    radius = radius * 0.90;
+    setInterval(drawClock, 1000);
+
+    function drawClock() {
+      drawFace(ctx, radius);
+      drawNumbers(ctx, radius);
+      drawTime(ctx, radius);
+    }
+ </script>
+ ```
+
+![HTML JavaScript Analog Clock](../../images/html-javascript-analog-clock.png)
+*HTML JavaScript Analog Clock* 
 
 ### Task 2: Ajax, CSS, jQuery, and Web API integration
 
