@@ -137,22 +137,22 @@ Below is the inline JavaScript code to log when a key is pressed in the POST met
 </script>
 ```
 
-![HTML JavaScript Digit Clock Closer Look](../../images/html-javascript-digit-clock-img.png)
+![HTML JavaScript Digit Clock a Closer Look](../../images/html-javascript-digit-clock-img.png)
 
-*HTML JavaScript Digit Clock Closer LookS*
+*HTML JavaScript Digit Clock a Closer Look*
 
 ![HTML JavaScript Digit Clock](../../images/html-javascript-digit-clock.png)
 *HTML JavaScript Digit Clock*
 
  - Below I used the code I used to implement the email and it appearing once clicked by the user.
 
-![HTML JavaScript email.js Code](../../images/html-javascript-code.png)
+![HTML JavaScript email.js Code](../../images/html-javascript-email-code.png)
 *HTML JavaScript email.js Code*
 
-![HTML JavaScript Email Webpage](../../images/html-javascript-img.png)
+![HTML JavaScript Email Webpage](../../images/html-javascript-email-img.png)
 *HTML JavaScript Email Webpage*
 
-![HTML JavaScript Email Clicked](../../images/html-javascript-clicked.png)
+![HTML JavaScript Email Clicked](../../images/html-javascript-email-clicked.png)
 *HTML JavaScript Email Clicked*
 
  - Display an analog clock using an external JavaScript code and code in your HTML page. (5 pts) 
