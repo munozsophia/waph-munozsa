@@ -51,6 +51,8 @@ To add the user input forms to the webpage, I used the \<form> tag and \<input> 
 </div>
 ```
 
+Below is an input from the user \(using the GET method)
+
 ![HTTP GET Request Input](../../images/html-get-request-input.png)
 
 *HTTP GET Request Input*
@@ -58,6 +60,8 @@ To add the user input forms to the webpage, I used the \<form> tag and \<input> 
 ![HTTP GET Request Output](../../images/html-get-request-output.png)
 
 *HTTP GET Request Output*
+
+Below is an input from the user \(using the POST method)
 
 ![HTTP POST Request Input](../../images/html-post-request-input.png)
 
