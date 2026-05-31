@@ -184,7 +184,7 @@ Below is the inline JavaScript code to log when a key is pressed in the POST met
 
 ####  a. Ajax
 
-I implemented the JavaScript code below for the Ajax GET request. This allows for the user input to be seen as a key is pressed. And as you can see from the final image for the HTTP requests/responses, that Request URL contains the data input by the user \('http://localhost/echo.php?data=Another%20test%20data') and that the status is `200 OK`. Implementing Ajax asynchronously allows for data handling to be dealt with better performance.
+I implemented the JavaScript code below for the Ajax GET request. This allows for the user input to be seen as a key is pressed. And as you can see from the final image for the HTTP requests/responses, that Request URL contains the data input by the user \(`http://localhost/echo.php?data=Another%20test%20data`) and that the status is `200 OK`. Implementing Ajax asynchronously allows for data handling to be dealt with better performance.
 
 ```html
 <script>
@@ -209,10 +209,11 @@ I implemented the JavaScript code below for the Ajax GET request. This allows fo
 </script>
 ```
 
-![Ajax JavaScript GET Request Button Implemented](../../images/ajax-javascript-button)
+![Ajax JavaScript GET Request Button Implemented](../../images/ajax-javascript-button.png)
 *Ajax JavaScript GET Request Button Implemented*
 
 ![Ajax JavaScript Server Response](../../images/ajax-javascript-server-response.png)
+
 *Ajax JavaScript Server Response*
 
 ![Ajax JavaScript Keypress](../../images/ajax-javascript-keypress.png)
