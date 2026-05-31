@@ -182,19 +182,44 @@ Below is the inline JavaScript code to log when a key is pressed in the POST met
 
 ### Task 2: Ajax, CSS, jQuery, and Web API integration
 
-_Ajax, CSS, and jQuery exercises below are covered in Lecture 5; Web API integration is covered in Lecture 6._
-
 ####  a. Ajax
 
-Add new HTML code for a user input `<input>`, a `<button>`, and a `<div>` element with JavaScript code into your page to:
+I implemented the JavaScript code below for the Ajax GET request. This allows for the user input to be seen as a key is pressed. And as you can see from the final image for the HTTP requests/responses, that Request URL contains the data input by the user \('http://localhost/echo.php?data=Another%20test%20data') and that the status is `200 OK`. Implementing Ajax asynchronously allows for data handling to be dealt with better performance.
 
-- get the user input when the new button is clicked
+```html
+<script>
+   function getEcho() {
+         var input = document.getElementById("data").value;
+         if (input.length == 0) {
+            return;
+         }
+         var xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+               console.log("Received data=" + xhttp.responseText);
+               document.getElementById("response").innerText= "Response from server:" + xhttp.responseText;
+               // code to show the data
+            }
+         }
+         xhttp.open("GET", "echo.php?data=" + input, true);
+         // code to create an Ajax request
+         xhttp.send(); // code to send the request
+         document.getElementById("data").value="";
+      }
+</script>
+```
 
-- Construct and send an Ajax GET request to the `echo.php` web application (Reuse the code/application in Lab 1)
+![Ajax JavaScript GET Request Button Implemented](../../images/ajax-javascript-button)
+*Ajax JavaScript GET Request Button Implemented*
 
-- Listen to the HTTP response and display the response content in the <div> element
+![Ajax JavaScript Server Response](../../images/ajax-javascript-server-response.png)
+*Ajax JavaScript Server Response*
 
-You need to inspect the network connections in the browser to review and illustrate how an Ajax request/response works.
+![Ajax JavaScript Keypress](../../images/ajax-javascript-keypress.png)
+*Ajax JavaScript Keypress*
+
+![Ajax JavaScript Network Outcome](../../images/ajax-javascript-network.png)
+*Ajax JavaScript Network Outcome*
 
 #### b. CSS
 
