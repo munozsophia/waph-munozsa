@@ -231,7 +231,7 @@ The inline CSS implementation of JavaScript code is below. While it wasn't imple
 <h1 style="color: blue;">Blue Heading</h1>
 ```
 
-The external CSS implementation of JavaScript code is below. The Remote CSS was implemented between the \<head>\</head> tags of `waph-munozsa.html`. To complete this implementation I had to reorganize the webpage so it was a bit more neat. I also added a `container wrapper` class to wrap around the `menubar` and `main` tags. I used the \<script>\</script> tag to encapsulate all the functions that have been implemented so far.
+The external CSS implementation of JavaScript code is below. The Remote CSS was implemented between the `<head></head>` tags of `waph-munozsa.html`. To complete this implementation I had to reorganize the webpage so it was a bit more neat. I also added a `container wrapper` class to wrap around the `menubar` and `main` tags. I used the `<script></script>` tag to encapsulate all the functions that have been implemented so far.
 
 ```html
 <link rel="stylesheet" type="text/css" href="https://waph-uc.github.io/style1.css">
@@ -249,7 +249,7 @@ The internal CSS implementation of JavaScript code is below, including the imple
 ```html
 <style>
    .button {
-      background-color: #4CAF50;
+      background-color: #4CAF50; /* Green */
       border: none;
       color: white;
       padding: 5px;
@@ -270,12 +270,21 @@ The internal CSS implementation of JavaScript code is below, including the imple
 
 #### c. jQuery
 
-Add the jQuery library to your page, and implement HTML and JavaScript code in jQuery to:
+I added the jQuery libary with the code below.
 
-  **i.** When the corresponding button is clicked, send an Ajax GET request to the `echo.php` web application and display the response content
+```html
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+```
 
-  **ii.** Similarly, when the corresponding button is clicked, send an Ajax GET request to the `echo.php` web application and display the response content 
+  **i.** An Ajax GET request to `echo.php` web application occurs when the `Ajax jQuery GET Echo` button is clicked and the server responds. From the image below, the GET method can be seen from the Inspect page.
 
+![jQuery Ajax GET Request](../../images/jquery-ajax-get-request.png)
+*jQuery Ajax GET Request*
+
+  **ii.** An Ajax POST request to `echo.php` web application occurs when the `Ajax jQuery POST Echo` button is clicked and the server responds. From the image below, the GET method can be seen from the Inspect page.
+
+![jQuery Ajax POST Request](../../images/jquery-ajax-post-request.png)
+*jQuery Ajax POST Request*
 
 #### d. Web API integration
 
