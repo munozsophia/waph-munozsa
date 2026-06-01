@@ -276,12 +276,42 @@ I added the jQuery libary with the code below.
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 ```
 
-  **i.** An Ajax GET request to `echo.php` web application occurs when the `Ajax jQuery GET Echo` button is clicked and the server responds. From the image below, the GET method can be seen from the Inspect page.
+  **i.** An Ajax GET request to `echo.php` web application occurs when the `Ajax jQuery GET Echo` button is clicked and the server responds. From the image below, the GET method can be seen from the Inspect page. The code implemenation is below.
+
+```html
+<script>
+   function jQueryAjax() {
+      var input = $("#data").val();
+      if (input.length == 0) return;
+      $.get("echo.php?data=" + input,
+         function(result) {
+            $("#response").html("Response from server:" + result);
+         }
+      );
+      $("#data").val("");
+   }
+</script>
+```
 
 ![jQuery Ajax GET Request](../../images/jquery-ajax-get-request.png)
 *jQuery Ajax GET Request*
 
-  **ii.** An Ajax POST request to `echo.php` web application occurs when the `Ajax jQuery POST Echo` button is clicked and the server responds. From the image below, the GET method can be seen from the Inspect page.
+  **ii.** An Ajax POST request to `echo.php` web application occurs when the `Ajax jQuery POST Echo` button is clicked and the server responds. From the image below, the GET method can be seen from the Inspect page. The code implementation is below.
+
+```html
+<script>
+   function jQueryAjaxPost() {
+      var input = $("#data").val();
+      if (input.length == 0) return;
+      $.post("echo.php",{data: input},
+         function(result) {
+            $("#response").html("Response from server:" + result);
+         }
+      );
+      $("#data").val("");
+   }
+</script>
+```
 
 ![jQuery Ajax POST Request](../../images/jquery-ajax-post-request.png)
 *jQuery Ajax POST Request*
