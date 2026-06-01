@@ -189,23 +189,23 @@ I implemented the JavaScript code below for the Ajax GET request. This allows fo
 ```html
 <script>
    function getEcho() {
-         var input = document.getElementById("data").value;
-         if (input.length == 0) {
-            return;
-         }
-         var xhttp = new XMLHttpRequest();
-         xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-               console.log("Received data=" + xhttp.responseText);
-               document.getElementById("response").innerText= "Response from server:" + xhttp.responseText;
-               // code to show the data
-            }
-         }
-         xhttp.open("GET", "echo.php?data=" + input, true);
-         // code to create an Ajax request
-         xhttp.send(); // code to send the request
-         document.getElementById("data").value="";
+      var input = document.getElementById("data").value;
+      if (input.length == 0) {
+         return;
       }
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+            console.log("Received data=" + xhttp.responseText);
+            document.getElementById("response").innerText= "Response from server:" + xhttp.responseText;
+            // code to show the data
+         }
+      }
+      xhttp.open("GET", "echo.php?data=" + input, true);
+      // code to create an Ajax request
+      xhttp.send(); // code to send the request
+      document.getElementById("data").value="";
+   }
 </script>
 ```
 
@@ -296,7 +296,7 @@ I added the jQuery libary with the code below.
 ![jQuery Ajax GET Request](../../images/jquery-ajax-get-request.png)
 *jQuery Ajax GET Request*
 
-  **ii.** An Ajax POST request to `echo.php` web application occurs when the `Ajax jQuery POST Echo` button is clicked and the server responds. From the image below, the GET method can be seen from the Inspect page. The code implementation is below.
+  **ii.** An Ajax POST request to `echo.php` web application occurs when the `Ajax jQuery POST Echo` button is clicked and the server responds. From the image below, the POST method can be seen from the Inspect page. The code implementation is below.
 
 ```html
 <script>
