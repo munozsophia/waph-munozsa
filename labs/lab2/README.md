@@ -184,7 +184,7 @@ Below is the inline JavaScript code to log when a key is pressed in the POST met
 
 ####  a. Ajax
 
-I implemented the JavaScript code below for the Ajax GET request. This allows for the user input to be seen as a key is pressed. And as you can see from the final image for the HTTP requests/responses, that Request URL contains the data input by the user \(`http://localhost/echo.php?data=Another%20test%20data`) and that the status is `200 OK`. Implementing Ajax asynchronously allows for data handling to be dealt with better performance.
+I implemented the JavaScript code below for the Ajax GET request. This allows for the user input to be seen as a key is pressed. And as you can see from the final image for the HTTP requests/responses, that the request URL contains the data input by the user \(`http://localhost/echo.php?data=Another%20test%20data`) and that the status is `200 OK`. Implementing Ajax asynchronously allows for data handling to be dealt with better performance then when it is synchronous.
 
 ```html
 <script>
@@ -210,6 +210,7 @@ I implemented the JavaScript code below for the Ajax GET request. This allows fo
 ```
 
 ![Ajax JavaScript GET Request Button Implemented](../../images/ajax-javascript-button.png)
+
 *Ajax JavaScript GET Request Button Implemented*
 
 ![Ajax JavaScript Server Response](../../images/ajax-javascript-server-response.png)
@@ -224,7 +225,48 @@ I implemented the JavaScript code below for the Ajax GET request. This allows fo
 
 #### b. CSS
 
-Add CSS to your page with inline, internal, and external (one of the provided remote CSS) ones.
+The inline CSS implementation of JavaScript code is below. While it wasn't implemented into my `waph-munozsa.html`, an example is provided.
+
+```html
+<h1 style="color: blue;">Blue Heading</h1>
+```
+
+The external CSS implementation of JavaScript code is below. The Remote CSS was implemented between the \<head>\</head> tags of `waph-munozsa.html`. To complete this implementation I had to reorganize the webpage so it was a bit more neat. I also added a `container wrapper` class to wrap around the `menubar` and `main` tags. I used the \<script>\</script> tag to encapsulate all the functions that have been implemented so far.
+
+```html
+<link rel="stylesheet" type="text/css" href="https://waph-uc.github.io/style1.css">
+```
+
+The internal CSS implementation of JavaScript code is below, including the implementation of the class button round.
+
+```html
+<input class="button round" type="button" value="Ajax Echo" onclick="getEcho()">
+```
+
+![CSS JavaScript Button Implemented](../../images/css-javascript-button.png)
+*CSS JavaScript Button Implemented*
+
+```html
+<style>
+   .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 4px 2px;
+      cursor: pointer;
+   }
+   .round {border-radius: 8px;}
+   #response {background-color: #ff9800;} /* Orange */
+</style>
+```
+
+![CSS JavaScript Server Response](../../images/css-javascript-server-response.png)
+*CSS JavaScript Server Response*
 
 #### c. jQuery
 
