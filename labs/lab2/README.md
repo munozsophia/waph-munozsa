@@ -102,7 +102,10 @@ Below is the inline JavaScript code that displays the time and date when it is c
 ```html
 <b>Experiments with JavaScript code</b><br>
 <i>Inlined JavaScript</i>
-<div id="date" onclick="document.getElementById('date').innerHTML=Date()">Click here to show Date()</div>
+<div id="date"
+     onclick="document.getElementById('date')
+     .innerHTML=Date()">Click here to show Date()
+</div>
 ```
 
 ![HTML JavaScript Before Click](../../images/html-javascript-before-click.png)
@@ -144,7 +147,7 @@ Below is the inline JavaScript code to log when a key is pressed in the POST met
 ![HTML JavaScript Digit Clock](../../images/html-javascript-digit-clock.png)
 *HTML JavaScript Digit Clock*
 
- - Below I used the code I used to implement the email and it appearing once clicked by the user.
+ - Below I used the code implement the email and it appearing once clicked by the user.
 
 ![HTML JavaScript email.js Code](../../images/html-javascript-email-code.png)
 *HTML JavaScript email.js Code*
@@ -197,7 +200,8 @@ I implemented the JavaScript code below for the Ajax GET request. This allows fo
       xhttp.onreadystatechange = function() {
          if (this.readyState == 4 && this.status == 200) {
             console.log("Received data=" + xhttp.responseText);
-            document.getElementById("response").innerText= "Response from server:" + xhttp.responseText;
+            document.getElementById("response")
+                    .innerText= "Response from server:" + xhttp.responseText;
             // code to show the data
          }
       }
@@ -234,7 +238,9 @@ The inline CSS implementation of JavaScript code is below. While it wasn't imple
 The external CSS implementation of JavaScript code is below. The Remote CSS was implemented between the `<head></head>` tags of `waph-munozsa.html`. To complete this implementation I had to reorganize the webpage so it was a bit more neat. I also added a `container wrapper` class to wrap around the `menubar` and `main` tags. I used the `<script></script>` tag to encapsulate all the functions that have been implemented so far.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://waph-uc.github.io/style1.css">
+<link rel="stylesheet"
+      type="text/css"
+      href="https://waph-uc.github.io/style1.css">
 ```
 
 The internal CSS implementation of JavaScript code is below, including the implementation of the class button round.
@@ -275,7 +281,9 @@ Below is the button round class implementation.
 I added the jQuery libary with the code below.
 
 ```html
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
 ```
 
   **i.** An Ajax GET request to `echo.php` web application occurs when the `Ajax jQuery GET Echo` button is clicked and the server responds. From the image below, the GET method can be seen from the Inspect page. The code implemenation is below.
@@ -351,7 +359,10 @@ I added the jQuery libary with the code below.
 The code below implemented the new button with the existing Ajax requests form.
 
 ```html
-<input class="button round" type="button" value="guess Age" onclick="guessAge($('#data').val())">
+<input class="button round"
+       type="button"
+       value="guess Age" 
+       onclick="guessAge($('#data').val())">
 ```
 
 ![Web API fetch() Integration](../../images/web-fetch-api.png)
