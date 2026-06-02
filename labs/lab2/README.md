@@ -14,9 +14,11 @@
 
 ## The Lab's Overview
 
-For Lab2 there were two tasks. Task 1 has two parts. Part `a` was creating webpages with the basic HTML tags. The webpage implemented used basic HTML tags with forms and an adjusted image. For Part `b`, I used simple JavaScript code within the HTML file to 
+For Lab2 there were two tasks. Task 1 has two parts. Part `a` was creating webpages with the basic HTML tags. The webpage implemented used basic HTML tags with forms and an adjusted image. For Part `b`, I used simple JavaScript code within the HTML file to implement and show the Date and Email when clicked by the user. And a digit and analog clock was also integrated into the webpage.
 
-Outcomes I learned from this lab were
+Task 2 has four parts. Part `a` was implementing Ajax GET requests and keypress logging. Part `b` was implementing CSS with a class in JavaScript. There are three types of CSS implementation \(inline, internal, external). For Part `c`, I implemented jQuery Ajax GET and POST requests to `echo.php` using the existing class for the button and adding functions for each request. For Part `d`, I integrated Web APIs with Ajax and fetch\().
+
+Outcomes I learned from this lab were a great amount of Front-End Web Development that will definitely be useful for Project 1. I also learned about how integrating Ajax asynchronously supports better performance in data handling.
 
 Lab2 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab2](https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab2).
 
@@ -361,7 +363,7 @@ The code below implemented the new button with the existing Ajax requests form.
 ```html
 <input class="button round"
        type="button"
-       value="guess Age" 
+       value="guess Age"
        onclick="guessAge($('#data').val())">
 ```
 
