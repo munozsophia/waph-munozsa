@@ -217,8 +217,8 @@ I implemented the JavaScript code below for the Ajax GET request. This allows fo
 
 *Ajax JavaScript Server Response*
 
-![Ajax JavaScript Keypress](../../images/ajax-javascript-keypress.png)
-*Ajax JavaScript Keypress*
+![Ajax JavaScript keypress](../../images/ajax-javascript-keypress.png)
+*Ajax JavaScript keypress*
 
 ![Ajax JavaScript Network Outcome](../../images/ajax-javascript-network.png)
 *Ajax JavaScript Network Outcome*
