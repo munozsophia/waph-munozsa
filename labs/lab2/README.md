@@ -246,6 +246,8 @@ The internal CSS implementation of JavaScript code is below, including the imple
 ![CSS JavaScript Button Implemented](../../images/css-javascript-button.png)
 *CSS JavaScript Button Implemented*
 
+Below is the button round class implementation.
+
 ```html
 <style>
    .button {
@@ -318,10 +320,39 @@ I added the jQuery libary with the code below.
 
 #### d. Web API integration
 
-**i.** Using Ajax on [https://v2.jokeapi.dev/joke/Programming?type=single](https://v2.jokeapi.dev/joke/Programming?type=single) 
+**i.** I used Ajax on [https://v2.jokeapi.dev/joke/Programming?type=single](https://v2.jokeapi.dev/joke/Programming?type=single), with the code below I integrated a joke simulator with jQuery Ajax and no input. As you can see in the image below the request was of type `XHR`. Anytime the page is reloaded, a new joke \(related to programming) is generated.
 
-Write JavaScript code using jQuery Ajax to send a request and handle the response to display a random joke from the above API when the page is loaded. Inspect the network in the browser to examine the request and response accordingly.
+```html
+<script>
+   $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
+      function(result) {
+         console.log("From jokeAPI: " + JSON.stringify(result));
+         $("#response").html("A programming joke of the day: " + result.joke);
+      }
+   ) // this will be executed automatically
+</script>
+```
 
-**ii.** Using the `fetch` API  on [https://api.agify.io/?name=input](https://api.agify.io/?name=input)
+![Web API Ajax Integration](../../images/web-ajax-api.png)
+*Web API Ajax Integration*
 
-Add HTML and JavaScript code to use the `fetch()` method to call the above API with user input, and display the response results. Inspect the network in the browser to examine the request and response accordingly.
+**ii.** I used the `fetch` API  on [https://api.agify.io/?name=input](https://api.agify.io/?name=input), with the code below I integrated an age guesser based on a name inputted by the user with fetch\(). As you can see in the image below the request was of type `fetch`.
+
+```html
+<script>
+      async function guessAge(name) {
+      const response = await fetch("https://api.agify.io/?name=" + name);
+      const result = await response.json();
+      $("#response").html("Hi " + name + ", your age should be " + result.age);
+   }
+</script>
+```
+
+The code below implemented the new button with the existing Ajax requests form.
+
+```html
+<input class="button round" type="button" value="guess Age" onclick="guessAge($('#data').val())">
+```
+
+![Web API fetch() Integration](../../images/web-fetch-api.png)
+*Web API fetch() Integration*
