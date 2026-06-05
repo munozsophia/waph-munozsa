@@ -30,7 +30,9 @@ Latest update: May 25, 2026
 
 ### Hackathons
 
-Hands-on hacking exercises
+[Hands-on hacking exercises](hackathons)
+
+- [Hackathon 1](hackathons/hackathon1): Cross-Site Scripting Attacks and Defenses
 
 ### Individual Projects
 
