@@ -79,8 +79,8 @@ I used `fromCharCode` to encode `alert` as to not have it be detected. Assuming 
 
 `https://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php?input=<img src=x onerror=eval(String.fromCharCode(97,108,101,114,116,40,39,76,101,118,101,108,32,53,45,72,97,99,107,101,100,32,98,121,32,83,111,112,104,105,97,32,77,117,110,111,122,39,41))>`
 
-![Level 4 Injected XSS and Payload Attack](../../images/level-4-attack.png)
-*Level 4 Injected XSS and Payload Attack*
+![Level 5 Injected XSS and Payload Attack](../../images/level-5-attack.png)
+*Level 5 Injected XSS and Payload Attack*
 
 #### g. Level 6
 
