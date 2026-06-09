@@ -140,7 +140,7 @@
 			$.post("echo.php",{data: input},
 				function(result) {
 					if (!result) result;
-					$("#response").html("Response from server:" + result);
+					$("#response").html("Response from server:" + encodeInput(result));
 				}
 			);
 			$("#data").val("");
