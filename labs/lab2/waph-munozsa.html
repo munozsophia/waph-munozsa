@@ -105,7 +105,7 @@
 
 		function getEcho() {
 			var input = document.getElementById("data").value;
-			if (input.length == 0) {
+			if (!input || input.length == 0) {
 				return;
 			}
 			var xhttp = new XMLHttpRequest();
