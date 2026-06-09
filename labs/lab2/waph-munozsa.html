@@ -150,7 +150,7 @@
 			function(result) {
 				console.log("From jokeAPI: " + JSON.stringify(result));
 				if (!result || !result.joke) return;
-				$("#response").html("A programming joke of the day: " + result.joke);
+				$("#response").html("A programming joke of the day: " + encodeInput(result.joke));
 			}
 		) // this will be executed automatically
 
