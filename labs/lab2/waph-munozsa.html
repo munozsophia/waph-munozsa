@@ -124,9 +124,10 @@
 
 		function jQueryAjax() {
 			var input = $("#data").val();
-			if (input.length == 0) return;
-			$.get("echo.php?data=" + input,
+			if (!input || input.length == 0) return;
+			$.get("echo.php?data=" + encodeInput(input),
 				function(result) {
+					if (!result) return;
 					$("#response").html("Response from server:" + result);
 				}
 			);
