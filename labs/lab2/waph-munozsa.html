@@ -136,9 +136,10 @@
 
 		function jQueryAjaxPost() {
 			var input = $("#data").val();
-			if (input.length == 0) return;
+			if (!input || input.length == 0) return;
 			$.post("echo.php",{data: input},
 				function(result) {
+					if (!result) result;
 					$("#response").html("Response from server:" + result);
 				}
 			);
