@@ -128,7 +128,7 @@
 			$.get("echo.php?data=" + encodeInput(input),
 				function(result) {
 					if (!result) return;
-					$("#response").html("Response from server:" + result);
+					$("#response").html("Response from server:" + encodeInput(result));
 				}
 			);
 			$("#data").val("");
