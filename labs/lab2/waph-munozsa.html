@@ -155,8 +155,10 @@
 		) // this will be executed automatically
 
 		async function guessAge(name) {
+			if (!name || name.length == 0) return;
 			const response = await fetch("https://api.agify.io/?name=" + name);
 			const result = await response.json();
+			if (!result || !result.age) return;
 			$("#response").html("Hi " + name + ", your age should be " + result.age);
 		}
 	</script>
