@@ -156,10 +156,10 @@
 
 		async function guessAge(name) {
 			if (!name || name.length == 0) return;
-			const response = await fetch("https://api.agify.io/?name=" + name);
+			const response = await fetch("https://api.agify.io/?name=" + encodeInput(name));
 			const result = await response.json();
 			if (!result || !result.age) return;
-			$("#response").html("Hi " + name + ", your age should be " + result.age);
+			$("#response").html("Hi " + encodeInput(name) + ", your age should be " + encodeInput(String(result.age)));
 		}
 	</script>
 </body>
