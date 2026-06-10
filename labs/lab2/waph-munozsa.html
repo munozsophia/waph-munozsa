@@ -137,9 +137,9 @@
 		function jQueryAjaxPost() {
 			var input = $("#data").val();
 			if (!input || input.length == 0) return;
-			$.post("echo.php",{data: input},
+			$.post("echo.php",{data: encodeInput(input)},
 				function(result) {
-					if (!result) result;
+					if (!result) return;
 					$("#response").html("Response from server:" + encodeInput(result));
 				}
 			);
