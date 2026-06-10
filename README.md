@@ -1,4 +1,4 @@
-# waph-munozsa
+# WAPH-Web Application Programming and Hacking
 
 ## Instructor: Dr. Phu Phung
 
@@ -18,7 +18,7 @@ Repository's URL: [https://github.com/munozsophia/waph-munozsa.git](https://gith
 
 This is a private repository for Sophia Munoz to store all code from the course. The organization of this repository is as follows.
 
-Latest update: May 25, 2026
+Latest update: June 09, 2026
 
 ### Labs
 
