@@ -33,6 +33,8 @@ Below is the XSS code injected into the input form:
 ![Level 0 Injected XSS and Payload Attack](../../images/level-0-attack.png)
 *Level 0 Injected XSS and Payload Attack*
 
+https://github.com/user-attachments/assets/98203200-d23c-42d8-a2f7-5a6c7873b0f5
+
 #### b. Level 1
 
 Below is the XSS code injected into the URL:
@@ -41,6 +43,8 @@ Below is the XSS code injected into the URL:
 
 ![Level 1 Injected XSS and Payload Attack](../../images/level-1-attack.png)
 *Level 1 Injected XSS and Payload Attack*
+
+https://github.com/user-attachments/assets/36318a2e-18ef-449e-965b-a72136adb9a6
 
 #### c. Level 2
 
@@ -63,6 +67,8 @@ Assuming the method used was the `POST` method. The vulnerability is exploited i
 ![Level 2 Injected XSS and Payload Attack](../../images/level-2-attack.png)
 *Level 2 Injected XSS and Payload Attack*
 
+https://github.com/user-attachments/assets/ad5a7dbb-6152-412d-ba32-880e80183b61
+
 #### d. Level 3
 
 Below is the XSS code injected into the URL:
@@ -73,6 +79,8 @@ Assuming the method used was the `GET` method. The vulnerability is exploited in
 
 ![Level 3 Injected XSS and Payload Attack](../../images/level-3-attack.png)
 *Level 3 Injected XSS and Payload Attack*
+
+https://github.com/user-attachments/assets/8c3a660d-5fe3-4a42-bf43-5306893b76ae
 
 #### e. Level 4
 
@@ -85,6 +93,8 @@ I URL encoded the `&` in `&#115;`. The ampersand essentially acts as URL paramet
 ![Level 4 Injected XSS and Payload Attack](../../images/level-4-attack.png)
 *Level 4 Injected XSS and Payload Attack*
 
+https://github.com/user-attachments/assets/ceeb87ad-0e6a-4c94-95b3-208d77820ac4
+
 #### f. Level 5
 
 Below is the XXS code injected into the URL:
@@ -95,6 +105,8 @@ I used `fromCharCode` to encode `alert` as to not have it be detected. Assuming 
 
 ![Level 5 Injected XSS and Payload Attack](../../images/level-5-attack.png)
 *Level 5 Injected XSS and Payload Attack*
+
+https://github.com/user-attachments/assets/a00d1d4d-0919-4f6d-bda1-0f735c2664bb
 
 #### g. Level 6
 
