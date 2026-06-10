@@ -22,7 +22,7 @@ Hackathon1 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/hackat
 
 ### Task 1: Attacks
 
-The section covers the cross-site scripting injections used to hack into 7 Levels of webpages.
+The section covers the cross-site scripting injections used to hack into 7 Levels of webpages. I was able to do the XSS for Levels 0 to Level 5. But unfortunately, I could not figure out Level 6. It was quite difficult.
 
 #### a. Level 0
 
@@ -109,6 +109,8 @@ I used `fromCharCode` to encode `alert` as to not have it be detected. Assuming 
 [Click Here to View Level 5 Demo](https://github.com/user-attachments/assets/a00d1d4d-0919-4f6d-bda1-0f735c2664bb)
 
 #### g. Level 6
+
+Given that Level 6 used `htmlentities()`, the webpage is quite protected and made it difficult for me to find a way to inject XSS code successfully.
 
 ### Task 2: Defenses
 
