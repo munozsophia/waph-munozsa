@@ -150,6 +150,8 @@ echo htmlentities($_REQUEST['data']);
 
 **`waph-munozsa.html`**
 
+The implementation of the code below makes it simpler to encode the data in the other functions.
+
 ![waph-munozsa.html Encode Input Function](../../images/waph-munozsa-html-encode-input.png)
 *waph-munozsa.html Encode Input Function*
 
