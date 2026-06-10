@@ -98,17 +98,78 @@ I used `fromCharCode` to encode `alert` as to not have it be detected. Assuming 
 
 #### g. Level 6
 
-Guess the core source code of the `echo.php` web application \(where the vulnerability is exploited)
-
-**i** injected XSS to display name using alert\()
-
-**ii** payload of the attack inspected in the browser
-
 ### Task 2: Defenses
 
-Review and revise your vulnerable, insecure code in Lab 1 and Lab 2 by implementing input validation and XSS defense methods in:
+This section modifies vulnerable code from Lab 1 and Lab 2 by the using input validation and XSS defense methods.
 
-- echo.php (from Lab 1)
-- Current front-end prototype (Lab 2) (12 pts): identify external input data channels, where you must validate the data before using it, and encode the data before displaying/injecting in the front-end interface, i.e., webpage
+#### a. Input Validation Implementation
 
-For each revision, commit and push the code to GitHub with an appropriate message, and capture a screenshot on GitHub of that commit to illustrate the code revision \(GitHub -> Code -> xx commits -> click on the commit you revised the code). The expected screenshot is illustrated in Lecture 8 and the attached slides.
+**`echo.php`**
+
+![echo.php Revision](../../images/echo-php-validation-defense.png)
+*echo.php Revision*
+
+The code specifically implementing validation is below. It checks to see if the data is not missing.
+
+```PHP
+if (!isset($_REQUEST['data'])) {
+   die("{\"error\": \"Please provide 'data' field\"}");
+}
+```
+
+**`waph-munozsa.html`**
+
+![waph-munozsa.html getEcho() Revision](../../images/waph-munozsa-html-getecho.png)
+*waph-munozsa.html getEcho() Revision*
+
+![waph-munozsa.html jQueryAjax() Validation Revision](../../images/waph-munozsa-html-jquery-valid.png)
+*waph-munozsa.html jQueryAjax() Validation Revision*
+
+![waph-munozsa.html jQueryAjaxPost() Validation Revision](../../images/waph-munozsa-html-jquerypost-valid.png)
+*waph-munozsa.html jQueryAjaxPost() Validation Revision*
+
+![waph-munozsa.html jokeAPI Validation Revision](../../images/waph-munozsa-html-jokeAPI-valid.png)
+*waph-munozsa.html jokeAPI Validation Revision*
+
+![waph-munozsa.html guessAge() Validation Revision](../../images/waph-munozsa-html-guessage-valid.png)
+*waph-munozsa.html guessAge() Validation Revision*
+
+**`email.js`**
+
+Looking over the code of email.js, there doesn't seem to be any external input from the user. The email is hardcoded into the code, so I don't see a need for input validation.
+
+#### b. XSS Defenses
+
+**`echo.php`**
+
+The code specifically implementing XSS defense is below. It encodes the data output. The image from the previous section shows the image with the `echo.php` revision.
+
+```PHP
+echo htmlentities($_REQUEST['data']);
+```
+
+**`waph-munozsa.html`**
+
+![waph-munozsa.html Encode Input Function](../../images/waph-munozsa-html-encode-input.png)
+*waph-munozsa.html Encode Input Function*
+
+![waph-munozsa.html jQueryAjax() Defense Revision](../../images/waph-munozsa-html-jquery-defense.png)
+*waph-munozsa.html jQueryAjax() Defense Revision*
+
+I didn't realize until later that I had missed implementing the encodeInput\() function for one piece of data so there are two revisions for jQueryAjaxPost.
+
+![waph-munozsa.html jQueryAjaxPost() Defense Revision](../../images/waph-munozsa-html-jquerypost-defense.png)
+*waph-munozsa.html jQueryAjaxPost() Defense Revision*
+
+![waph-munozsa.html jQueryAjaxPost() Defense Revision Fix](../../images/waph-munozsa-html-jquerypost-defense-fix.png)
+*waph-munozsa.html jQueryAjaxPost() Defense Revision Fix*
+
+![waph-munozsa.html jokeAPI Defense Revision](../../images/waph-munozsa-html-jokeAPI-defense.png)
+*waph-munozsa.html jokeAPI Defense Revision*
+
+![waph-munozsa.html guessAge() Defense Revision](../../images/waph-munozsa-html-guessage-defense.png)
+*waph-munozsa.html guessAge() Defense Revision*
+
+**`email.js`**
+
+The use of `innerHTML` provides a way to inject the tag `<a>`, but as previously mentioned above, due to the email being hardcoded in the file, there seems to be no risk of cross-site scripting.
