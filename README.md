@@ -27,6 +27,7 @@ Latest update: June 09, 2026
 - [Lab 0](labs/lab0): Development Environment Setup
 - [Lab 1](labs/lab1): Foundations of the Web
 - [Lab 2](labs/lab2): Front-End Web Development
+- [Lab 3](labs/lab3): Secure Web Application Development in PHP/MySQL
 
 ### Hackathons
 
@@ -35,5 +36,7 @@ Latest update: June 09, 2026
 - [Hackathon 1](hackathons/hackathon1): Cross-Site Scripting Attacks and Defenses
 
 ### Individual Projects
+
+- [Individual Project 1](https://github.com/munozsophia/munozsophia.github.io): Professional Homepage
 
 ### Team Project
