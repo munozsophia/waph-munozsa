@@ -78,8 +78,8 @@ I used `echo "DEBUG>sql= $sql"; return TRUE;` to check within the MySQL server i
 ![Login Debug](../../images/login-debug.png)
 *Login Debug*
 
-![Login Filter](../../images/login-filter.png)
-*Login Filter*
+![Login Table Users Filter](../../images/login-users-filter.png)
+*Login Table Users Filter*
 
 After Testing I logged in successfully with the fully implemented login system.
 
