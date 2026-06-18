@@ -81,7 +81,7 @@ I used `echo "DEBUG>sql= $sql"; return TRUE;` to check within the MySQL server i
 ![Login Table Users Filter](../../images/login-users-filter.png)
 *Login Table Users Filter*
 
-After Testing I logged in successfully with the fully implemented login system.
+After testing, I logged in successfully with the fully implemented login system.
 
 ![Login Page](../../images/login-page.png)
 *Login Page*
@@ -90,5 +90,15 @@ After Testing I logged in successfully with the fully implemented login system.
 *Login Success*
 
 ### c. Performing XSS and SQL Injection Attacks
+
+For Part `c`, I performed a XSS/SQL Injection Attack on the login system using this injection script, `admin' #<script>alert(document.cookie)</script>`.
+
+This code is a mix of SQL and JavaScript that is able to attack the vulnerable system. Below is an image of the login page with the code injection and below that is the alert, showing that the hacking was successful.
+
+![XSS Login Attack Page](../../images/xss-login-attack-code.png)
+*XSS Login Attack Page*
+
+![XSS Login Attack Successful](../../images/xss-login-attack-successful.png)
+*XSS Login Attack Successful*
 
 ### d. Prepared Statement Implementation
