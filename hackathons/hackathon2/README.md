@@ -14,7 +14,7 @@
 
 ## The Lab's Overview
 
-For Hackathon 1,
+For Hackathon 2,
 
 Outcomes I learned from this hackathon were 
 
