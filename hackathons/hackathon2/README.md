@@ -109,4 +109,12 @@ I used the SQLi code to inject in the URL: `product.php?id=0 UNION SELECT loginn
 
 - Reveal the password values
 
+Using the Most Popular Passwords site, I `Ctrl-F` the hashed password for the user `admin`, which was `qwerty`.
+
+![Level 2b Hashed Password](../../images/level-2b-hashed-password.png)
+*Level 2b Hashed Password*
+
 #### c. Login to the system with the stolen username/password
+
+![Level 2c Hashed Password](../../images/level-2bc-login-success.png)
+*Level 2c Hashed Password*
