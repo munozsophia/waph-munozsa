@@ -94,7 +94,19 @@ I injected `product.php?id=0 UNION SELECT table_name,column_name,3 FROM informat
 ##### iv. Display Login Credentials in Database and Reveal in Plaintext
 
 - Identify the table and its columns that store username/password to login to the system
+
+I injected `product.php?id=0 UNION SELECT table_name,column_name,3 FROM information_schema.columns WHERE table_name="login"-- -` since I identified the **`login`** table. Within the table, there are two columns, **`loginname`** and **`password`**.
+
+![Level 2b Login Credentials](../../images/level-2b-login-credentials.png)
+*Level 2b Login Credentials*
+
 - Construct the SQLi code to display all usernames/passwords stored in the database \(Your University's username must be also displayed in the injected queries)
+
+I used the SQLi code to inject in the URL: `product.php?id=0 UNION SELECT loginname,password,"munozsa" FROM login-- -`
+
+![Level 2b Display Usernames/Passwords](../../images/level-2b-display-user-pass.png)
+*Level 2b Display Usernames/Passwords*
+
 - Reveal the password values
 
 #### c. Login to the system with the stolen username/password
