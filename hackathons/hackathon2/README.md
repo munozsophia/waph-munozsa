@@ -46,7 +46,7 @@ $sql = 'SELECT * FROM users WHERE username="' . $username . '" AND password=md5(
 
 #### a. Detecting SQLi Vulnerabilities
 
-I added a `'` to the `product.php` page for the apple product link [https://waph-hackathon.eastus.cloudapp.azure.com/sqli/level2/product.php?id=1'](https://waph-hackathon.eastus.cloudapp.azure.com/sqli/level2/product.php?id=1'), making it return the fatale error seen in the image below.
+I added a `'` to the `product.php` page for the apple product link [https://waph-hackathon.eastus.cloudapp.azure.com/sqli/level2/product.php?id=1'](https://waph-hackathon.eastus.cloudapp.azure.com/sqli/level2/product.php?id=1'), making it return the fatal error seen in the image below.
 
 ![Level 2a Fatal Error](../../images/level-2a-fatal-error.png)
 *Level 2a Fatal Error*
@@ -55,10 +55,16 @@ I added a `'` to the `product.php` page for the apple product link [https://waph
 
 ##### i. Identify Number of Columns and Display Each Column on the Page
 
-The back-end SQLi code is potentially:
+The Back-End SQLi code is potentially:
 
 ```php
 SELECT * FROM products WHERE id=$id
+```
+
+Or potentially:
+
+```php
+SELECT col1,col2,col3 FROM products WHERE id=$id
 ```
 
 From guessing the number of columns, I would get the fatal error below as the number of columns guessed was incorrect.
@@ -71,9 +77,19 @@ Once the correct number of columns was guessed, **three**, the page loaded corre
 ![Level 2b Column Guessed](../../images/level-2b-column-guessed.png)
 *Level 2b Column Guessed*
 
-##### ii. Display Information \(username, name, WAPH section) on the Page
+##### ii. Display Information on the Page
+
+To display my information nice and cleanly I set id=0 to suppress the original product results as shown below injecting `product.php?id=0 UNION SELECT "Hacked by munozsa", "Sophia Munoz","WAPH-01"`
+
+![Level 2b Info Displayed](../../images/level-2b-info-displayed.png)
+*Level 2b Info Displayed*
 
 ##### iii. Display the Database Schema
+
+I injected `product.php?id=0 UNION SELECT table_name,column_name,3 FROM information_schema.columns-- -` to display the database schema below.
+
+![Level 2b Database Schema](../../images/level-2b-database-schema.png)
+*Level 2b Database Schema*
 
 ##### iv. Display Login Credentials in Database and Reveal in Plaintext
 
