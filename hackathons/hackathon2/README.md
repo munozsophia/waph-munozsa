@@ -46,9 +46,30 @@ $sql = 'SELECT * FROM users WHERE username="' . $username . '" AND password=md5(
 
 #### a. Detecting SQLi Vulnerabilities
 
+I added a `'` to the `product.php` page for the apple product link [https://waph-hackathon.eastus.cloudapp.azure.com/sqli/level2/product.php?id=1'](https://waph-hackathon.eastus.cloudapp.azure.com/sqli/level2/product.php?id=1'), making it return the fatale error seen in the image below.
+
+![Level 2a Fatal Error](../../images/level-2a-fatal-error.png)
+*Level 2a Fatal Error*
+
 #### b. Read and Display Data from Database
 
 ##### i. Identify Number of Columns and Display Each Column on the Page
+
+The back-end SQLi code is potentially:
+
+```php
+SELECT * FROM products WHERE id=$id
+```
+
+From guessing the number of columns, I would get the fatal error below as the number of columns guessed was incorrect.
+
+![Level 2b Fatal Error](../../images/level-2b-fatal-error.png)
+*Level 2b Fatal Error*
+
+Once the correct number of columns was guessed, **three**, the page loaded correctly. I injected `product.php?id=1 UNION SELECT 1,2,3-- -` to the URL.
+
+![Level 2b Column Guessed](../../images/level-2b-column-guessed.png)
+*Level 2b Column Guessed*
 
 ##### ii. Display Information \(username, name, WAPH section) on the Page
 
