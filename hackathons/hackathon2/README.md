@@ -116,5 +116,5 @@ Using the Most Popular Passwords site, I `Ctrl-F` the hashed password for the us
 
 #### c. Login to the system with the stolen username/password
 
-![Level 2c Hashed Password](../../images/level-2bc-login-success.png)
-*Level 2c Hashed Password*
+![Level 2c Login Success](../../images/level-2c-login-success.png)
+*Level 2c Login Success*
