@@ -22,7 +22,25 @@ Hackathon2 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/hackat
 
 ### Level 0
 
+![Level 0 SQLi Injection](../../images/level-0-sqli-injection.png)
+*Level 0 SQLi Injection*
+
+![Level 0 Login Success](../../images/level-0-login-success.png)
+*Level 0 Login Success*
+
 ### Level 1
+
+Back-End Code Guess:
+
+```php
+$sql = 'SELECT * FROM users WHERE username="' . $username . '" AND password=md5("' . $password . '")';
+```
+
+![Level 1 SQLi Injection](../../images/level-1-sqli-injection.png)
+*Level 1 SQLi Injection*
+
+![Level 1 Login Success](../../images/level-1-login-success.png)
+*Level 1 Login Success*
 
 ### Level 2
 
