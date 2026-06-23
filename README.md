@@ -18,7 +18,7 @@ Repository's URL: [https://github.com/munozsophia/waph-munozsa.git](https://gith
 
 This is a private repository for Sophia Munoz to store all code from the course. The organization of this repository is as follows.
 
-Latest update: June 09, 2026
+Latest update: June 19, 2026
 
 ### Labs
 
@@ -34,6 +34,7 @@ Latest update: June 09, 2026
 [Hands-on hacking exercises](hackathons)
 
 - [Hackathon 1](hackathons/hackathon1): Cross-Site Scripting Attacks and Defenses
+- [Hackathon 2](hackathons/hackathon2): SQL Injection Attacks
 
 ### Individual Projects
 
