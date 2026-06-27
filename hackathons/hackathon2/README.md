@@ -39,7 +39,8 @@ For this level, I guessed the Back-End SQL string and just like in the previous 
 Back-End Code Guess:
 
 ```php
-$sql = 'SELECT * FROM users WHERE username="' . $username . '" AND password=md5("' . $password . '")';
+$sql = 'SELECT * FROM users WHERE username="' . $username . 
+	   '" AND password=md5("' . $password . '")';
 ```
 
 ![Level 1 SQLi Injection](../../images/level-1-sqli-injection.png)
