@@ -93,7 +93,7 @@ function checklogin_mysql($username, $password) {
       if ($result->num_rows == 1)
          return TRUE;
       return FALSE;
-   }
+}
 ```
 
 I used `echo "DEBUG>sql= $sql"; return TRUE;` to check within the MySQL server if the user input existed within the `waph` database table `users`.
@@ -133,12 +133,43 @@ This code is a mix of SQL and JavaScript that is able to attack the vulnerable s
 
 ### d. Prepared Statement Implementation
 
-This sub-task was covered in Lecture 13; students should refer to the slides for detailed instructions. Below is the summary of steps with grades:
+For Part `d`, I implemented a Prepared Statement which essentially provides a level of security against SQL injection attacks.
 
-Prepared Statement for SQL Injection Prevention (7.5 pts)
-Notes: Before implementing the new code, you should push your existing working code to your repository for later reference and usage. Pay attention to the demo in the lecture.
 
-Follow the instructions to revise the code with a prepared statement.
+
+![Prepared Statement XSS Login](../../images/prepared-statement-xss-login.png)
+*Prepared Statement XSS Login*
+
+[Prepared Statement XSS Login Invalid](../../images/prepared-statement-xss-invalid.png)
+*Prepared Statement XSS Login Invalid*
+
+```php
+function checklogin_mysql($username, $password) {
+      $mysqli = new mysqli('localhost',
+                           'munozsa' /*Database username*/,
+                           'Sophia13_m' /*Database password*/,
+                           'waph' /*Database name*/);
+      if ($mysqli->connect_errno) {
+         printf("Database connection failed: %s\n", $mysqli->connect_error);
+         exit();
+      }
+      $sql = "SELECT * FROM users WHERE username=? AND password = md5(?)";
+      //echo "DEBUG>sql= $sql"; return TRUE;
+      $stmt = $mysqli->prepare($sql);
+      $stmt->bind_param("ss", $username, $password);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      if ($result->num_rows == 1)
+         return TRUE;
+      return FALSE;
+}
+```
+
+[Prepared Statement Credentials Login](../../images/prepared-statement-credentials-login.png)
+*Prepared Statement Credentials Login*
+
+[Prepared Statement Credentials Login Valid](../../images/prepared-statement-credentials-valid.png)
+*Prepared Statement Credentials Login Valid*
 
 Report the outcome and grades: a brief summary of the step; include the content/snippet of the new code, and ensure that the new PHP file is in your repository (5pts); a screenshot with the payload in the browser demonstrating that the same SQL Injection attack in (c) is failed with this new implementation (2.5 pts).
 
