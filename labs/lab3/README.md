@@ -140,7 +140,7 @@ For Part `d`, I implemented a Prepared Statement which essentially provides a le
 ![Prepared Statement XSS Login](../../images/prepared-statement-xss-login.png)
 *Prepared Statement XSS Login*
 
-[Prepared Statement XSS Login Invalid](../../images/prepared-statement-xss-invalid.png)
+![Prepared Statement XSS Login Invalid](../../images/prepared-statement-xss-invalid.png)
 *Prepared Statement XSS Login Invalid*
 
 ```php
@@ -165,10 +165,10 @@ function checklogin_mysql($username, $password) {
 }
 ```
 
-[Prepared Statement Credentials Login](../../images/prepared-statement-credentials-login.png)
+![Prepared Statement Credentials Login](../../images/prepared-statement-credentials-login.png)
 *Prepared Statement Credentials Login*
 
-[Prepared Statement Credentials Login Valid](../../images/prepared-statement-credentials-valid.png)
+![Prepared Statement Credentials Login Valid](../../images/prepared-statement-credentials-valid.png)
 *Prepared Statement Credentials Login Valid*
 
 Report the outcome and grades: a brief summary of the step; include the content/snippet of the new code, and ensure that the new PHP file is in your repository (5pts); a screenshot with the payload in the browser demonstrating that the same SQL Injection attack in (c) is failed with this new implementation (2.5 pts).
