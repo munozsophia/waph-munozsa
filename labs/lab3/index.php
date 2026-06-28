@@ -2,7 +2,7 @@
 	session_start();    
 	if (checklogin_mysql($_POST["username"],$_POST["password"])) {
 ?>
-	<h2> Welcome <?php echo $_POST['username']; ?> !</h2>
+	<h2> Welcome <?php echo htmlspecialchars($_POST['username'], ENT_QUOTES, 'UTF-8'); ?> !</h2>
 <?php		
 	}else{
 		echo "<script>alert('Invalid username/password');window.location='form.php';</script>";

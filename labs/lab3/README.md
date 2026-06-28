@@ -14,29 +14,13 @@
 
 ## The Lab's Overview
 
-In this lab, students will learn the fundamentals of creating, managing, and securing web applications using PHP and MySQL. The lab exercises are designed to illustrate the vulnerabilities inherent in web applications and the best practices to mitigate these risks. Students will develop a simple login system that is intentionally vulnerable to common web attacks, starting with basic database setup and management. Through hands-on hacking exercises, students will exploit these vulnerabilities, gaining an understanding of SQL Injection and XSS attacks. The lab concludes with implementing security measures, specifically using prepared statements and output sanitization, to defend against these attacks.
+For Lab3 there were 4 parts. In Part `a`, I created a new database and imported SQL commands. In Part `b`, I created a login system in PHP/MySQL. In Part `c`, I made XSS and SQL injections attacks to the system. In Part `d`, I implemented Prepared Statements and output satitization to prevent the attacks previously mentioned.
 
-The hands-on exercises in this lab consist of multiple sub-tasks with grade distribution as follows. Please note that these sub-tasks and their instructions have been covered in Lectures 10-13; students should watch the lecture videos and slides and follow the in-lecture hands-on exercises. These hands-on steps are combined in the attached slides for your convenience.
-
-For Lab3 there were 4 parts.
-
-Outcomes I learned from this lab were
+Outcomes I learned from this lab were how to set up and manange a MySQL database. The implementation of the login system also allowed me to see the vulnerabilities of the system so that the prevention of cyberattacks can be implemented with secure methods.
 
 Lab3 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab3](https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab3).
 
 ### a. Database Setup and Management
-
-This sub-task was covered in Lecture 10; students should refer to the slides for detailed instructions. Below is the summary of steps with grades:
-
-MySQL Installation (0 pts)
-Installation: Execute sudo apt-get install mysql-server -y to install MySQL server.
-Testing: Verify installation by executing mysql -V.
-Connecting: Use sudo mysql -u root -p to connect to the MySQL server, pressing enter when prompted for a password.
-Create a New Database, Database User and Permission (2.5 pts)
-Report the outcome: a brief summary of the step; include the content of the database-account.sql file, and ensure that the file is in your repository.
-
-Create a new table Users and insert data into the table (7.5 pts)
-Report the outcome and grades: a brief summary of the step; include the content of the database-data.sql file, and ensure that the file is in your repository (2.5pts); the passwords are hashed (2.5pts); a screenshot demonstrating that you logged in a non-root data account to MySQL server and displayed the content of the table users (2.5 pts).
 
 For Part `a`, I created a new database `waph` and a database account by importing SQL commands from the file `database-account.sql`. The commands implemented are below.
 
@@ -64,13 +48,6 @@ INSERT INTO users(username, password) VALUES ('admin', md5('MyPa$$w0rd'));
 *Database Table Setup*
 
 ### b. A Simple (Insecure) Login System with PHP/MySQL
-
-This sub-task was covered in Lecture 10; students should refer to the slides for detailed instructions. Below is the summary of steps with grades:
-
-Driver Installation: Make sure that you've installed PHP MySQLi extension with sudo apt-get install php-mysqli, and restart Apache using sudo service apache2 restart.
-Modify index.php: add a checklogin_mysql function in index.php for database programming authentication following the instructions in the lecture.
-Deployment and Testing: Deploy form.php and the modified index.php, then test the login functionality.
-Report the outcome and grades: a brief summary of the step; include the content of the new code, and ensure that the PHP files are in your repository (10pts); a screenshot demonstrating that a valid username/password can log in to the system (5 pts).
 
 For Part `b`, I developed a login system with PHP/MySQL. To achieve this I connected to the database, created a query string for username/password user inputs, executed and handled the query result.
 
@@ -114,34 +91,39 @@ After testing, I logged in successfully with the fully implemented login system.
 
 ### c. Performing XSS and SQL Injection Attacks
 
-This sub-task was covered in Lecture 11, and Lecture 12 (Hackathon 2); students should refer to the slides and lecture video for detailed instructions. Below is the summary of steps with grades:
+#### SQL Injection Attacks
 
-SQL Injection Attacks (7.5 pts)
-Execute Attack: Use SQL injection in the username field to bypass authentication. Document the attack with a screenshot with the payload in the browser (5 pts) and explain why such attacks happen (2.5pts).
-Cross-site Scripting (XSS)
-Execute Attack: Perform an XSS attack by injecting JavaScript into the user input field. Take a screenshot of the successful attack and discuss the vulnerability in your report (2.5 pts).
+Using the SQL injection attack `admin' #`, the `#` comments the rest of the query and hacks into the system.
 
-For Part `c`, I performed a XSS/SQL Injection Attack on the login system using this injection script, `admin' #<script>alert(document.cookie)</script>`.
+![SQL Injection Login](../../images/sql-injection-login.png)
+*SQL Injection Login*
+
+![SQL Injection Valid](../../images/sql-injection-valid.png)
+*SQL Injection Valid*
+
+#### Cross-Site Scripting (XSS)
+
+Using just the Cross-Site Scripting attack `<script>alert(document.cookie)</script>`, the XSS doesn't execute successfully because the user input is displayed after the login. Either way, the vulnerability is `$_POST['username']` as it is echoed without any sanitization.
+
+![XSS Attack Login](../../images/xss-attack-login.png)
+*XSS Attack Login*
+
+![XSS Attack Invalid](../../images/xss-attack-invalid.png)
+*XSS Attack Invalid*
+
+Overall for Part `c`, I performed a XSS/SQL Injection Attack on the login system using this injection script, `admin' #<script>alert(document.cookie)</script>`.
 
 This code is a mix of SQL and JavaScript that is able to attack the vulnerable system. Below is an image of the login page with the code injection and below that is the alert, showing that the hacking was successful.
 
-![XSS Login Attack Page](../../images/xss-login-attack-code.png)
-*XSS Login Attack Page*
+![SQL/XSS Login Attack Page](../../images/xss-login-attack-code.png)
+*SQL/XSS Login Attack Page*
 
-![XSS Login Attack Successful](../../images/xss-login-attack-successful.png)
-*XSS Login Attack Successful*
+![SQL/XSS Login Attack Successful](../../images/xss-login-attack-successful.png)
+*SQL/XSS Login Attack Successful*
 
 ### d. Prepared Statement Implementation
 
-For Part `d`, I implemented a Prepared Statement which essentially provides a level of security against SQL injection attacks.
-
-
-
-![Prepared Statement XSS Login](../../images/prepared-statement-xss-login.png)
-*Prepared Statement XSS Login*
-
-![Prepared Statement XSS Login Invalid](../../images/prepared-statement-xss-invalid.png)
-*Prepared Statement XSS Login Invalid*
+For Part `d`, I implemented a Prepared Statement which essentially provides a level of security against SQL injection attacks. The code implementation is below. This ensures that these attacks are prevented.
 
 ```php
 function checklogin_mysql($username, $password) {
@@ -165,17 +147,45 @@ function checklogin_mysql($username, $password) {
 }
 ```
 
+Below is an image of a login attempt with the SQL Injection attack. The attempt was unsuccessful and you can see the notification showing the invalid username and password.
+
+![Prepared Statement XSS Login](../../images/prepared-statement-xss-login.png)
+*Prepared Statement XSS Login*
+
+![Prepared Statement XSS Login Invalid](../../images/prepared-statement-xss-invalid.png)
+*Prepared Statement XSS Login Invalid*
+
+Below is an image a login attempt with the actual credentials. The attempt was successful as there is violation of the prepared statement.
+
 ![Prepared Statement Credentials Login](../../images/prepared-statement-credentials-login.png)
 *Prepared Statement Credentials Login*
 
 ![Prepared Statement Credentials Login Valid](../../images/prepared-statement-credentials-valid.png)
 *Prepared Statement Credentials Login Valid*
 
-Report the outcome and grades: a brief summary of the step; include the content/snippet of the new code, and ensure that the new PHP file is in your repository (5pts); a screenshot with the payload in the browser demonstrating that the same SQL Injection attack in (c) is failed with this new implementation (2.5 pts).
+#### Security Analysis
 
-Security Analysis (7.5 pts)
-Prepared Statement Explanation: Discuss why prepared statements can prevent SQL injection attacks (2.5 pts)
+Prepared Statements can prevent SQL injection attacks by separating SQL code and user input. The values are also treated as string input and not SQL values and so the SQL injection has no effect on the query structure and fails to "hack" into the system.
 
-Implement Sanitization: Enhance the code to sanitize outputs, mitigating XSS risks. Provide the revised code in the report with an explanation (2 pts)
+To mitigate XSS risks I implemented code sanitizing user input using `htmlspecialchars()`. This allows for special characters to be converted to html entities and prevents JavaScript code from executing. Instead as the function is used, plain text is what executes.
 
-Discussions (3pts): Are there any programming flaws/vulnerabilities in the current code? For example, what if the username/password are empty?; what if there are any database errors?; what if the provided username is not exactly the same as the username from the database.
+```php
+<h2> Welcome <?php echo htmlspecialchars($_POST['username'], ENT_QUOTES, 'UTF-8'); ?> !</h2>
+```
+
+The current code vulnerabilities as stands are as follows:
+
+If the username/password are empty, an invalid notification pops up. There is no check for empty inputs before the query is run in:
+
+```php
+if (checklogin_mysql($_POST["username"],$_POST["password"]))
+```
+
+If there are any database errors and `prepare()` fails, the fatal error output by `bind_param()` could expose info to attackers.
+
+```php
+$stmt = $mysqli->prepare($sql);
+$stmt->bind_param("ss", $username, $password);
+```
+
+If the provided username is not exactly the same as the username from the database, there is no issue logging in. The username is not at all case-sensitive. This is an issue as an attacker can enter `ADMIN` or `Admin` as the username even if it isn't technically correct.
