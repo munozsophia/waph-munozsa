@@ -167,10 +167,10 @@ Below is an image a login attempt with the actual credentials. The attempt was s
 
 Prepared Statements can prevent SQL injection attacks by separating SQL code and user input. The values are also treated as string input and not SQL values and so the SQL injection has no effect on the query structure and fails to "hack" into the system.
 
-To mitigate XSS risks I implemented code sanitizing user input using `htmlspecialchars()`. This allows for special characters to be converted to html entities and prevents JavaScript code from executing. Instead as the function is used, plain text is what executes.
+To mitigate XSS risks I implemented code sanitizing user input using `htmlentities()`. This allows for special characters to be converted to html entities and prevents JavaScript code from executing. Instead as the function is used, plain text is what executes.
 
 ```php
-<h2> Welcome <?php echo htmlspecialchars($_POST['username'], ENT_QUOTES, 'UTF-8'); ?> !</h2>
+<h2> Welcome <?php echo htmlentities($_POST['username'], ENT_QUOTES, 'UTF-8'); ?> !</h2>
 ```
 
 The current code vulnerabilities as stands are as follows:
