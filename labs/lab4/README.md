@@ -10,7 +10,7 @@
 
 ![Sophia's headshot](../../images/headshot.jpg)
 
-# Lab 4 - A Secure Login System with Session Authentication
+# Lab 4 - Secure Authentication System with Sessions
 
 ## The Lab's Overview
 
