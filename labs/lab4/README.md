@@ -47,12 +47,39 @@ Lab4 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/labs/lab4](h
 
 #### a. Revised Login System with Session Management
 
+![Authenticated User Logged In](../../images/sessiontest-php-authenticated.png)
+*Authenticated User Logged In*
+
+![Authenticated User Logged Out](../../images/sessiontest-php-logged-out.png)
+*Authenticated User Logged Out*
+
+![Unathenticated User Alerted](../../images/sessiontest-php-unauthenticated.png)
+*Unathenticated User Alerted*
+
 #### b. Session Hijacking Attacks
+
+![Before Session Hijacking Attack](../../images/sessiontest-php-before-hijacking-2b.png)
+*Before Session Hijacking Attack*
+
+![After Session Hijacking Attack](../../images/sessiontest-php-after-hijacking-2b.png)
+*After Session Hijacking Attack*
 
 ### Task 3: Securing Session and Session Authentication
 
 #### a. Data Protection and HTTPS Setup
 
+![SSL Certificate](../../images/ssl-certificate.png)
+*SSL Certificate*
+
+![PHP Page on HTTPS](../../images/https-webpage.png)
+*PHP Page on HTTPS*
+
 #### b. Securing Session Against Session Hijacking Attacks - Setting HttpOnly and Secure Flags for Cookies
 
+![Secure Session Authentication with HTTPOnly and Secure Flags](../../images/secure-session-authentication.png)
+*Secure Session Authentication with HTTPOnly and Secure Flags*
+
 #### c. Securing Session Against Session Hijacking Attacks - Defense In-Depth
+
+![Secure Session Hijacking Attack Detected](../../images/secure-session-hijacking-attack-detected.png)
+*Secure Session Hijacking Attack Detected*
