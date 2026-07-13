@@ -17,7 +17,7 @@
 			printf("Database connection failed: %s\n", $mysqli->connect_error);
 			return FALSE;
 		}
-		$prepared_sql = "INSERT INTO users (username, password) VALUES (?, md5(?))";
+		$prepared_sql = "INSERT INTO users (username,password) VALUES (?, md5(?))";
 		//echo "DEBUG>prepared_sql= $prepared_sql"; return TRUE;
 		$stmt = $mysqli->prepare($prepared_sql);
 		$stmt->bind_param("ss", $username, $password);
