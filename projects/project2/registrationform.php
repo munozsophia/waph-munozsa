@@ -2,34 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>WAPH-Login page</title>
-  <script type="text/javascript">
-      function displayTime() {
-        const options = {
-          month: 'short', // 'Jun'
-          day: '2-digit', // '24'
-          hour: '2-digit', // '07'
-          minute: '2-digit', // '03'
-          second: '2-digit', // '45'
-          hour12: true // 'am'
-        };
-        const formattedTime = new Date().toLocaleString('en-US', options).replace(/,/, '');
-        document.getElementById('digit-clock').innerHTML = "Current time: " + formattedTime;
-      }
-      setInterval(displayTime,500);
-  </script>
+  <title>WAPH-Sign Up Page</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1>New User Registration, WAPH</h1>
-  <h2>Sophia Munoz</h2>
-  <div id="digit-clock"></div>  
-<?php
-  echo "Visited time: " . date("Y-m-d h:i:sa");
-?>
+  <h1>Sign Up</h1>
   <form action="addnewuser.php" method="POST" class="form login">
-    Username:<input type="text" class="text_field" name="username" /> <br>
-    Password: <input type="password" class="text_field" name="password" /> <br>
-    <button class="button" type="submit">Login</button>
+    Name:
+    <input type="text" class="text_field" name="name"
+      required
+      placeholder="Your full name" /> <br>
+
+    Email: <input type="text" class="text_field" name="email"
+      required pattern="^[\w.-]+@[\w-]+(\.[\w-]+)*$"
+      title="Please enter a valid email"
+      placeholder="Your email address"
+      onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');" /> <br>
+
+    Username:
+    <input type="text" class="text_field" name="username"
+      required pattern="\w+"
+      title="Please enter a valid username"
+      placeholder="Your username"
+      onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');" /> <br>
+
+    Password: <input type="password" class="text_field" name="password"
+      required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&amp;])[\w!@#$%^&amp;]{8,}$"
+      title="Password must have at least 8 characters with 1 special symbol !@#$%^&amp;, 1 number, 1 lowercase, and 1 UPPERCASE"
+      placeholder="Your password"
+      onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : ''); form.repassword.pattern = this.value;" /> <br>
+
+    Retype Password: <input type="password" class="text_field" name="repassword"
+      required
+      title="Password does not match"
+      placeholder="Retype your password"
+      onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');" /> <br>
+
+    <button class="button" type="submit">Sign Up</button>
   </form>
+  <p class="form-footer-link">Already a member? <a href="form.php">Login</a></p>
 </body>
 </html>
