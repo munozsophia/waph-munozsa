@@ -1,0 +1,175 @@
+/*
+  style.css
+  Theme extracted from Individual Project 1
+  Source values pulled from: src/styles/themes/_variables-theme-dark.scss,
+  src/styles/_constants.scss, src/components/buttons/StandardButton.scss,
+  src/components/forms/*
+
+  Selectors below target the actual classes used in registrationform.php
+  (.text_field, .button, .form.login) so no HTML changes are needed.
+*/
+
+/* ---------- Fonts (same Google Fonts used in IP1's index.html) ---------- */
+@import url('https://fonts.googleapis.com/css?family=Saira:400,700');
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700');
+
+/* ---------- Theme tokens (from _variables-theme-dark.scss) ---------- */
+:root {
+    --color-primary: #8bdbf8;      /* accent color: buttons, focus states, links */
+    --color-danger: #fdd2d2;       /* validation error text/borders */
+    --color-muted: #6c757d;
+
+    --color-bg: #0c0c0c;           /* page background */
+    --color-container-bg: #191919; /* card / form container background */
+    --color-empty: #131313;        /* input field background */
+
+    --color-text: #eeeeee;         /* main text color */
+    --color-text-inverted: #111111;/* text on top of light/primary backgrounds */
+
+    --color-border: #1d1d1d;
+
+    --font-body: 'Saira', sans-serif;
+    --font-heading: 'Orbitron', sans-serif;
+
+    --radius: 10px;
+    --radius-pill: 4rem;
+}
+
+/* ---------- Base page ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 60px 1rem;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: 1.9rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+a {
+    color: var(--color-primary);
+}
+
+/* ---------- Sign up / login form card ---------- */
+.form.login {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    background-color: var(--color-container-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 2rem;
+}
+
+/* Each label + input sits on its own line with breathing room */
+.form.login br {
+    display: block;
+    content: "";
+    margin-bottom: 12px;
+}
+
+/* ---------- Text/password inputs (mirrors Input.scss + InputFieldWrapper.scss) ---------- */
+.text_field {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin-top: 6px;
+    padding: 0.8rem 1rem;
+    background-color: var(--color-empty);
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: border-color 0.15s ease;
+}
+
+.text_field:focus {
+    border-color: var(--color-primary);
+}
+
+.text_field::placeholder {
+    color: var(--color-muted);
+}
+
+.text_field:invalid:not(:placeholder-shown) {
+    border-color: var(--color-danger);
+}
+
+/* ---------- Checkbox (e.g. "Keep me logged in") ---------- */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+
+/* ---------- Submit button (mirrors StandardButton.scss) ---------- */
+.button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    border-radius: var(--radius-pill);
+    padding: 0.9rem 1.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-text-inverted);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+}
+
+.button:hover {
+    opacity: 0.85;
+}
+
+/* ---------- Footer link below the form (e.g. "Already a member? Login") ---------- */
+.form-footer-link {
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+}
+
+.form-footer-link a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.form-footer-link a:hover {
+    text-decoration: underline;
+}
