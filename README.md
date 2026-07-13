@@ -41,5 +41,8 @@ Latest update: July 7, 2026
 ### Individual Projects
 
 - [Individual Project 1](https://github.com/munozsophia/munozsophia.github.io): Professional Homepage
+- [Individual Project 2](projects/project2): Full-Stack Web Application
 
 ### Team Project
+
+- [WAPH Team Project](https://github.com/waph-uc-sm26-team4/waph-uc-sm26-team4.github.io): miniFacebook
