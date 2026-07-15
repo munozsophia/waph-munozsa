@@ -11,7 +11,7 @@
 	ini_set('display_errors', '1');
 	ini_set('display_startup_errors', '1');
 	error_reporting(E_ALL);
-	
+
 	/* --- Session management --- */
 	if (isset($_POST["remember"])) {
 		$lifetime = 30 * 24 * 60 * 60; // 30 days
@@ -76,25 +76,28 @@
 			exit();
 		}
 		$prepared_sql = "SELECT name, email FROM users WHERE username=?;";
-		$stmt = $mysqli->prepare($prepared_sql);
-		$stmt->bind_param("s", $username);
-		$stmt->execute();
-		$stmt->bind_result($name, $email);
-		if ($stmt->fetch()) {
-			return array("name" => $name, "email" => $email);
+		if (!$stmt = $mysqli->prepare($prepared_sql)) {
+			echo "Prepare failed";
+			exit();
 		}
-		return NULL;
+		$stmt->bind_param("s", $username);
+		if (!$stmt->execute()) {
+			echo "Execute failed";
+			exit();
+		}
+		$name = NULL; $emai = NULL;
+		if (!$stmt->bind_result($name, $email)) echo "Binding failed";
+		if ($stmt->fetch()) {
+			echo "<p><strong>Name:</strong> " . htmlentities($name) . "<br>";
+			echo "<strong>Email:</strong> " . htmlentities($email) . "</br></p>";
+		} else {
+			echo "<p>Profile information not found.</p>";
+		}
 	}
-	$profile = get_profile($_SESSION["username"]);
 ?>
 	<div class="form-card">
 		<h1>Welcome <?php echo htmlentities($_SESSION["username"]); ?>!</h1>
-		<?php if ($profile): ?>
-			<p><strong>Name:</strong> <?php echo htmlentities($profile["name"]); ?></p>
-			<p><strong>Email:</strong> <?php echo htmlentities($profile["email"]); ?></p>
-		<?php else: ?>
-			<p>Profile information not found.</p>
-		<?php endif; ?>
+		<?php get_profile($_SESSION["username"]); ?>
 		<p class="form-footer-link"><a href="logout.php">Logout</a></p>
 	</div>
 </body>
