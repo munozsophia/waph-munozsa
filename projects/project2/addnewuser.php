@@ -1,6 +1,19 @@
 <?php
-	$username = $_POST["username"];
-	$password = $_POST["password"];
+	/* --- Server-side sanitation --- */
+	function sanitize_input($input) {
+		$input = trim($input);
+		$input = stripslashes($input);
+		$input = htmlspecialchars($input);
+		return $input;
+
+	}
+
+	$name = isset($_POST["name"]) ? sanitize_input($_POST["name"]) : "";
+	$email = isset($_POST["email"]) ? sanitize_input($_POST["email"]) : "";
+	$username = isset($_POST["username"]) ? sanitize_input($_POST["username"]) : "";
+	$password = isset($_POST["password"]) ? sanitize_input($_POST["password"]) : "";
+	$repassword = isset($_POST["repassword"]) ? sanitize_input($_POST["repassword"]) : "";
+	
 	if (isset($username) and isset($password)) {
 		//echo "DEBUG> got username=$username; password=$password";
 		if (addnewuser($username,$password)) {
