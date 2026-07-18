@@ -1,15 +1,14 @@
 /*
   style.css
   Theme extracted from Individual Project 1
-  Source values pulled from: src/styles/themes/_variables-theme-dark.scss,
-  src/styles/_constants.scss, src/components/buttons/StandardButton.scss,
+  Source values pulled from:
+  src/styles/themes/_variables-theme-dark.scss,
+  src/styles/_constants.scss,
+  src/components/buttons/StandardButton.scss,
   src/components/forms/*
-
-  Selectors below target the actual classes used in registrationform.php
-  (.text_field, .button, .form.login) so no HTML changes are needed.
 */
 
-/* ---------- Fonts (same Google Fonts used in IP1's index.html) ---------- */
+/* ---------- Fonts ---------- */
 @import url('https://fonts.googleapis.com/css?family=Saira:400,700');
 @import url('https://fonts.googleapis.com/css?family=Orbitron:400,700');
 
@@ -112,6 +111,33 @@ a {
 
 .text_field:invalid:not(:placeholder-shown) {
     border-color: var(--color-danger);
+}
+
+/* ---------- Password field with eye-icon show/hide toggle ---------- */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper .text_field {
+    padding-right: 44px;
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 4px;
+    margin: 0;
+    line-height: 0;
+    color: var(--color-muted);
+    cursor: pointer;
+}
+
+.password-toggle-btn:hover {
+    color: var(--color-text);
 }
 
 /* ---------- Checkbox (e.g. "Keep me logged in") ---------- */

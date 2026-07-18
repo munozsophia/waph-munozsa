@@ -93,7 +93,7 @@
 	<div class="form-card">
 		<h1>Welcome <?php echo htmlentities($_SESSION["username"]); ?>!</h1>
 		<?php get_profile($_SESSION["username"]); ?>
-		<p class="form-footer-link"><a href="changepasswordform.php">Change Password</a> | <a href="logout.php">Logout</a></p>
+		<p class="form-footer-link"><a href="editprofileform.php">Edit Profile</a> | <a href="changepasswordform.php">Change Password</a> | <a href="logout.php">Logout</a></p>
 	</div>
 </body>
 </html>
