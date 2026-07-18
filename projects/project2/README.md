@@ -8,7 +8,7 @@
 
 **Email**: [mailto:munozsa@mail.uc.edu](munozsa@mail.uc.edu)
 
-![Sophia's headshot](public/images/content/pfp.jpg)
+![Sophia's headshot](../../images/headshot.jpg)
 
 # Individual Project 2 - Full-Stack Web Application
 

@@ -7,11 +7,6 @@
 </head>
 <body>
 <?php
-
-	ini_set('display_errors', '1');
-	ini_set('display_startup_errors', '1');
-	error_reporting(E_ALL);
-
 	/* --- Session management --- */
 	if (isset($_POST["remember"])) {
 		$lifetime = 30 * 24 * 60 * 60; // 30 days
@@ -19,7 +14,7 @@
 		$lifetime = 15 * 60; // 15 mins
 	}
 	$path = "/";
-	$domain = "192.168.56.101";
+	$domain = "munozsa.waph.io";
 	$secure = TRUE;
 	$httponly = TRUE;
 	session_set_cookie_params($lifetime, $path, $domain, $secure, $httponly);
@@ -41,14 +36,14 @@
 	if (!isset($_SESSION["authenticated"]) or $_SESSION["authenticated"] != TRUE) {
 		session_destroy();
 		echo "<script>alert('You have not logged in. Please login first!');</script>";
-		header("Refresh: 0; url=form.php");
+		header("Refresh:0; url=form.php");
 		die();
 	}
 
 	if ($_SESSION["browser"] != $_SERVER["HTTP_USER_AGENT"]) {
 		session_destroy();
 		echo "<script>alert('Session hijacking attack is detected!');</script>";
-		header("Refresh: 0; url=form.php");
+		header("Refresh:0; url=form.php");
 		die();
 	}
 
@@ -85,7 +80,7 @@
 			echo "Execute failed";
 			exit();
 		}
-		$name = NULL; $emai = NULL;
+		$name = NULL; $email = NULL;
 		if (!$stmt->bind_result($name, $email)) echo "Binding failed";
 		if ($stmt->fetch()) {
 			echo "<p><strong>Name:</strong> " . htmlentities($name) . "<br>";
@@ -98,7 +93,7 @@
 	<div class="form-card">
 		<h1>Welcome <?php echo htmlentities($_SESSION["username"]); ?>!</h1>
 		<?php get_profile($_SESSION["username"]); ?>
-		<p class="form-footer-link"><a href="logout.php">Logout</a></p>
+		<p class="form-footer-link"><a href="changepasswordform.php">Change Password</a> | <a href="logout.php">Logout</a></p>
 	</div>
 </body>
 </html>
