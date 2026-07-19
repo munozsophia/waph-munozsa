@@ -26,17 +26,71 @@ Individual Project 2 Repository: [https://github.com/munozsophia/waph-munozsa/tr
 
 #### a. User Registration
 
-I developed a user registration system that allows new users to create accounts by providing a username, password, name, and email address. Implement both client-side and server-side input validation to ensure data integrity.
+I developed a user registration system that a new user can use to create an account by using a username, password, name, and email address. I also used input validation client and server-side to ensure data integrity.
 
+To implement this functionality, I created `registrationform.php` for the front-end and `addnewuser.php` for the back-end. The form collects the name, email, username, password, and the retyped password. I used the `HTML5` `required` and `pattern` attributes, and also implemented regex \(regular expressions) to essentially set parameters for what counts as valid inputs. For example, the regex for a valid email is `^[\w.-]+@[\w-]+(\.[\w-]+)*$`.
 
+As for the server-side implementation, I used `preg_match()` and `sanitize_input()` for input validation and sanitation. For the prepared statements, I checked whether there already existed a username or email and then inserted the new user account. I also made sure to use `md5()` to hash the password.
+
+```php
+$check_sql = "SELECT username FROM users WHERE username=? OR email=?";
+```
+
+```php
+$prepared_sql = "INSERT INTO users (username,password,name,email) VALUES (?, md5(?), ?, ?)";
+```
+
+![Sign Up Page](../../images/registrationform-php.png)
+*Sign Up Page*
+
+![Sign Up Successful](../../images/addnewuser-php.png)
+*Sign Up Successful*
 
 #### b. Login
 
-Implement a secure login system that authenticates users and allows them to access their profiles. Use session management to maintain user state across the application.
+In this part, I implemented a secure login system authenticating users to allow access to view their profile. I used session management to maintain user state across the application, meaning the user would stay in their profile as they navigate the page.
+
+To implement this functionality, I created `form.php` for the front-end and `index.php` for the back-end. The form accepts an email or username and the password. For the email/username I used `identifier`, and used prepared statements to check whether the profile exists within the database.
+
+```php
+$sql = "SELECT username FROM users WHERE (username=? OR email=?) AND password=md5(?)";
+```
+
+I also used session management that takes into consideration for `$lifetime`, to check if the `Keep me logged in` box was checked off. The prepared statement below allowed for the user to see their profile once they are logged in.
+
+```php
+if (isset($_POST["remember"])) {
+        $lifetime = 30 * 24 * 60 * 60; // 30 days
+    } else {
+        $lifetime = 15 * 60; // 15 mins
+    }
+    $path = "/";
+    $domain = "munozsa.waph.io";
+    $secure = TRUE;
+    $httponly = TRUE;
+    session_set_cookie_params($lifetime, $path, $domain, $secure, $httponly);
+    session_start();
+```
+
+```php
+$prepared_sql = "SELECT name, email FROM users WHERE username=?;";
+```
+
+![Login Page](../../images/form-php.png)
+*Login Page*
+
+![Home Page](../../images/index-php.png)
+*Home Page*
 
 #### c. Profile Management
 
 Enable users to view and edit their profile information, such as name and email.
+
+![Edit Profile Page](../../images/editprofileform-php.png)
+*Edit Profile Page*
+
+![Edit Profile Page Change Success](../../images/editprofile-php.png)
+*Edit Profile Page Change Success*
 
 #### d. Password Update
 
