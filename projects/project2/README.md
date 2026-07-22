@@ -22,6 +22,10 @@ Outcomes I learned from this project were how to create a database that could ha
 
 Individual Project 2 Repository: [https://github.com/munozsophia/waph-munozsa/tree/main/projects/project2](https://github.com/munozsophia/waph-munozsa/tree/main/projects/project2)
 
+**Demonstration Video:**
+
+[Click Here to View Project Attack Demo]()
+
 ### Task 1. Functional Requirements
 
 #### a. User Registration
@@ -84,7 +88,17 @@ $prepared_sql = "SELECT name, email FROM users WHERE username=?;";
 
 #### c. Profile Management
 
-Enable users to view and edit their profile information, such as name and email.
+In this part, I enabled users to view and edit their profile information, such as their name and email. I implemented this functionality within `editprofileform.php` for the front-end and `editprofile.php` for the back-end. Users can also view their profile due to `index.php`. Once the user clicks the **Edit Profile** link in the home page, the web application takes the user to the `editprofileform.php` interface. There the user can edit their name or email or both.
+
+The `editprofile.php` file, in this case sanitizes and validates the input. If the email was changed, it checks to see if there is already and existing account with that email in use. If there is, then an alert is sent. To save the changes I used, `UPDATE users SET name = ?, email = ? WHERE username = ?`, to update the database table of the user's changes.
+
+```php
+if (editprofile($username, $name, $email)) {
+        echo "<script>alert('Profile updated!');window.location='index.php';</script>";
+    } else {
+        echo "<script>alert('Profile update failed. That email may already be in use.');window.location='editprofileform.php';</script>";
+    }
+```
 
 ![Edit Profile Page](../../images/editprofileform-php.png)
 *Edit Profile Page*
@@ -94,13 +108,19 @@ Enable users to view and edit their profile information, such as name and email.
 
 #### d. Password Update
 
-Allow users to change their passwords securely.
+In this part, I allowed users to change their passwords securely. To implement this functionality, I used `changepasswordform.php` for the front-end and `changepassword.php` for the back-end. I displayed the username using `<?php echo htmlentities($_SESSION["username"]); ?`. The form accepts the new password and newly re-typed password to validate. Both of these user inputs are validated client-side with the regex. As for server-side, the password goes through similar validation processes. I then used `$prepared_sql = "UPDATE users SET password = md5(?) WHERE username = ?;";` in my implementation of the `changepassword()` function to update the database. To prevent other users from changing account details that correspond to other users, I made sure to include `require "session_auth.php";` to add an extra layer of authentication through session rather than user input.
+
+![Change Password Page](../../images/changpasswordform-php.png)
+*Change Password Page*
+
+![Change Password Page Success](../../images/changpassword-php.png)
+*Change Password Page Success*
 
 ### Task 2. Security and Non-Technical Requirements
 
 #### a. Security
 
-The application must be deployed over HTTPS. Passwords must be hashed before being stored in the database. Do not use the MySQL root account in your PHP code. Ensure all SQL operations use prepared statements to mitigate SQL injection attacks.
+The web application is deployed over HTTPS. Passwords are hashed using `md5()` before being stored in the database. Ensure all SQL operations use prepared statements to mitigate SQL injection attacks.
 
 #### b. Input Validation
 

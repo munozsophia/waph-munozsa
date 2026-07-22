@@ -43,10 +43,10 @@
 			required
 			value="<?php echo htmlentities($profile["name"]); ?>" /> <br>
 		Email: <input type="text" class="text_field" name="email"
-		required pattern="^[\w.-]+@[\w-]+(\.[\w-]+)*$"
-		title="Please enter a valid email"
-		value="<?php echo htmlentities($profile["email"]); ?>"
-		onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');" /> <br>
+			required pattern="^[\w.-]+@[\w-]+(\.[\w-]+)*$"
+			title="Please enter a valid email"
+			value="<?php echo htmlentities($profile["email"]); ?>"
+			onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');" /> <br>
 	<input type="hidden" name="nocsrftoken" value="<?php echo $rand; ?>"/>
 	<button class="button" type="submit">Save Changes</button>
 	</form>
