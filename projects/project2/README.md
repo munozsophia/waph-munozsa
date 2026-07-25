@@ -844,8 +844,13 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
                 placeholder="Your new password"
                 onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : ''); 
                     form.renewpassword.pattern = this.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');" />
-            <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="toggle_show('newpassword', this)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <button type="button" class="password-toggle-btn" aria-label="Show password" 
+                onclick="toggle_show('newpassword', this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" 
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/></svg>
             </button>
         </div>
         <br>
@@ -857,8 +862,13 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
                 title="Password does not match"
                 placeholder="Retype your new password"
                 onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');" />
-            <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="toggle_show('renewpassword', this)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <button type="button" class="password-toggle-btn" aria-label="Show password" 
+                onclick="toggle_show('renewpassword', this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" 
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/></svg>
             </button>
         </div>
         <br>
@@ -883,7 +893,7 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
         die();
     }
 
-    $username = $_SESSION["username"]; //$_REQUEST["username"];
+    $username = $_SESSION["username"];
     $newpassword = isset($_POST["newpassword"]) ? $_POST["newpassword"] : "";
     $renewpassword = isset($_POST["renewpassword"]) ? $_POST["renewpassword"] : "";
 
@@ -893,7 +903,8 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
     }
 
     if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%^&])[\w!@#\$%^&]{8,}$/", $newpassword)) {
-        echo "<script>alert('Password must have at least 8 characters with 1 special symbol !@#\$%^&, 1 number, 1 lowercase, and 1 UPPERCASE.');window.location='changepasswordform.php';</script>";
+        echo "<script>alert('Password must have at least 8 characters with 1 special symbol 
+            !@#\$%^&, 1 number, 1 lowercase, and 1 UPPERCASE.');window.location='changepasswordform.php';</script>";
         die();
     }
     if ($newpassword !== $renewpassword) {
@@ -908,7 +919,7 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
     }
 
     function changepassword($username, $password) {
-        $mysqli = new mysqli('localhost','munozsa' /*Database username*/, 'Sophia13_m' /*Database password*/,'waph' /*Database name*/);
+        $mysqli = new mysqli('localhost','munozsa', 'Sophia13_m','waph');
         if ($mysqli->connect_errno) {
             printf("Database connection failed: %s\n", $mysqli->connect_error);
             return FALSE;
@@ -932,7 +943,7 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
     $_SESSION["nocsrftoken"] = $rand;
 
     function get_profile_data($username) {
-        $mysqli = new mysqli('localhost','munozsa' /*Database username*/, 'Sophia13_m' /*Database password*/,'waph' /*Database name*/);
+        $mysqli = new mysqli('localhost','munozsa', 'Sophia13_m','waph');
         if ($mysqli->connect_errno) {
             printf("Database connection failed: %s\n", $mysqli->connect_error);
             exit();
@@ -1019,11 +1030,12 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
     if (editprofile($username, $name, $email)) {
         echo "<script>alert('Profile updated!');window.location='index.php';</script>";
     } else {
-        echo "<script>alert('Profile update failed. That email may already be in use.');window.location='editprofileform.php';</script>";
+        echo "<script>alert('Profile update failed. That email may already be in use.');
+            window.location='editprofileform.php';</script>";
     }
 
     function editprofile($username, $name, $email) {
-        $mysqli = new mysqli('localhost','munozsa' /*Database username*/, 'Sophia13_m' /*Database password*/,'waph' /*Database name*/);
+        $mysqli = new mysqli('localhost','munozsa', 'Sophia13_m','waph');
         if ($mysqli->connect_errno) {
             printf("Database connection failed: %s\n", $mysqli->connect_error);
             return FALSE;
