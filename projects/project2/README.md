@@ -96,7 +96,8 @@ The `editprofile.php` file, in this case sanitizes and validates the input. If t
 if (editprofile($username, $name, $email)) {
         echo "<script>alert('Profile updated!');window.location='index.php';</script>";
     } else {
-        echo "<script>alert('Profile update failed. That email may already be in use.');window.location='editprofileform.php';</script>";
+        echo "<script>alert('Profile update failed. That email may already be in use.');
+        window.location='editprofileform.php';</script>";
     }
 ```
 
@@ -203,21 +204,9 @@ To incorporate mechanisms like anti-CSRF tokens to protect against Cross-Site Re
 ### style.css
 
 ```css
-/*
-  style.css
-  Theme extracted from Individual Project 1
-  Source values pulled from:
-  src/styles/themes/_variables-theme-dark.scss,
-  src/styles/_constants.scss,
-  src/components/buttons/StandardButton.scss,
-  src/components/forms/*
-*/
-
-/* ---------- Fonts ---------- */
 @import url('https://fonts.googleapis.com/css?family=Saira:400,700');
 @import url('https://fonts.googleapis.com/css?family=Orbitron:400,700');
 
-/* ---------- Theme tokens ---------- */
 :root {
     --color-primary: #8bdbf8;      /* accent color: buttons, focus states, links */
     --color-danger: #fdd2d2;       /* validation error text/borders */
@@ -239,7 +228,6 @@ To incorporate mechanisms like anti-CSRF tokens to protect against Cross-Site Re
     --radius-pill: 4rem;
 }
 
-/* ---------- Base page ---------- */
 * {
     box-sizing: border-box;
 }
@@ -271,7 +259,6 @@ a {
     color: var(--color-primary);
 }
 
-/* ---------- Sign up / login form card ---------- */
 .form.login {
     display: block;
     width: 100%;
@@ -282,14 +269,12 @@ a {
     padding: 2rem;
 }
 
-/* Each label + input sits on its own line with breathing room */
 .form.login br {
     display: block;
     content: "";
     margin-bottom: 12px;
 }
 
-/* ---------- Text/password inputs ---------- */
 .text_field {
     display: block;
     width: 100%;
@@ -318,7 +303,6 @@ a {
     border-color: var(--color-danger);
 }
 
-/* ---------- Password field with eye-icon show/hide toggle ---------- */
 .password-wrapper {
     position: relative;
 }
@@ -345,7 +329,6 @@ a {
     color: var(--color-text);
 }
 
-/* ---------- Checkbox ---------- */
 .checkbox-label {
     display: flex;
     align-items: center;
@@ -363,7 +346,6 @@ a {
     cursor: pointer;
 }
 
-/* ---------- Submit button ---------- */
 .button {
     display: block;
     width: 100%;
@@ -386,7 +368,6 @@ a {
     opacity: 0.85;
 }
 
-/* ---------- Footer link below the form ---------- */
 .form-footer-link {
     width: 100%;
     max-width: 380px;
@@ -457,8 +438,19 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
   <title>WAPH-Login Page</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript">
-    var EYE_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
-    var EYE_OFF_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a21.8 21.8 0 0 1 5.06-6.94M9.9 4.24A10.94 10.94 0 0 1 12 4c7 0 11 8 11 8a21.8 21.8 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+    var EYE_ICON = '<svg xmlns="http://www.w3.org/2000/svg" 
+        width="18" height="18" viewBox="0 0 24 24" fill="none" 
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+        <circle cx="12" cy="12" r="3"/></svg>';
+    var EYE_OFF_ICON = '<svg xmlns="http://www.w3.org/2000/svg" 
+        width="18" height="18" viewBox="0 0 24 24" fill="none" 
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 
+            0-11-8-11-8a21.8 21.8 0 0 1 5.06-6.94M9.9 4.24A10.94 
+            10.94 0 0 1 12 4c7 0 11 8 11 8a21.8 21.8 0 0 1-2.16 
+            3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+        <line x1="1" y1="1" x2="23" y2="23"/></svg>';
     function toggle_show(id, btn) {
       var el = document.getElementById(id);
       var showing = el.type === 'password';
@@ -482,7 +474,11 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
         required
         placeholder="Your password" />
       <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="toggle_show('password', this)">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" 
+            width="18" height="18" viewBox="0 0 24 24" 
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+            stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/></svg>
       </button>
     </div>
     <br>
@@ -510,7 +506,6 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
 </head>
 <body>
 <?php
-    /* --- Session management --- */
     if (isset($_POST["remember"])) {
         $lifetime = 30 * 24 * 60 * 60; // 30 days
     } else {
@@ -551,7 +546,7 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
     }
 
     function checklogin_mysql($identifier, $password) {
-        $mysqli = new mysqli('localhost','munozsa' /*Database username*/,'Sophia13_m' /*Database password*/,'waph' /*Database name*/);
+        $mysqli = new mysqli('localhost','munozsa','Sophia13_m','waph');
         if ($mysqli->connect_errno) {
             printf("Database connection failed: %s\n", $mysqli->connect_error);
             exit();
@@ -568,7 +563,7 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
     }
 
     function get_profile($username) {
-        $mysqli = new mysqli('localhost','munozsa' /*Database username*/,'Sophia13_m' /*Database password*/,'waph' /*Database name*/);
+        $mysqli = new mysqli('localhost','munozsa','Sophia13_m','waph');
         if ($mysqli->connect_errno) {
             printf("Database connection failed: %s\n", $mysqli->connect_error);
             exit();
@@ -596,7 +591,9 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
     <div class="form-card">
         <h1>Welcome <?php echo htmlentities($_SESSION["username"]); ?>!</h1>
         <?php get_profile($_SESSION["username"]); ?>
-        <p class="form-footer-link"><a href="editprofileform.php">Edit Profile</a> | <a href="changepasswordform.php">Change Password</a> | <a href="logout.php">Logout</a></p>
+        <p class="form-footer-link"><a href="editprofileform.php">Edit Profile</a> | 
+            <a href="changepasswordform.php">Change Password</a> | 
+            <a href="logout.php">Logout</a></p>
     </div>
 </body>
 </html>
@@ -635,8 +632,18 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
   <title>WAPH-Sign Up Page</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script>
-    var EYE_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
-    var EYE_OFF_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a21.8 21.8 0 0 1 5.06-6.94M9.9 4.24A10.94 10.94 0 0 1 12 4c7 0 11 8 11 8a21.8 21.8 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+    var EYE_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" 
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+        <circle cx="12" cy="12" r="3"/></svg>';
+    var EYE_OFF_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" 
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a21.8 21.8 0 
+            0 1 5.06-6.94M9.9 4.24A10.94 10.94 0 0 1 12 4c7 0 11 8 11 8a21.8 
+            21.8 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+        <line x1="1" y1="1" x2="23" y2="23"/></svg>';
     function toggle_show(id, btn) {
       var el = document.getElementById(id);
       var showing = el.type === 'password';
@@ -671,11 +678,17 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
     <div class="password-wrapper">
       <input type="password" class="text_field" id="password" name="password"
         required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&amp;])[\w!@#$%^&amp;]{8,}$"
-        title="Password must have at least 8 characters with 1 special symbol !@#$%^&amp;, 1 number, 1 lowercase, and 1 UPPERCASE"
+        title="Password must have at least 8 characters with 1 special symbol 
+            !@#$%^&amp;, 1 number, 1 lowercase, and 1 UPPERCASE"
         placeholder="Your password"
-        onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : ''); form.repassword.pattern = this.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');" />
+        onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : ''); 
+            form.repassword.pattern = this.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');" />
       <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="toggle_show('password', this)">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" 
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/></svg>
       </button>
     </div>
     <br>
@@ -688,7 +701,10 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
         placeholder="Retype your password"
         onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');" />
       <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="toggle_show('repassword', this)">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/></svg>
       </button>
     </div>
     <br>
@@ -704,7 +720,6 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
 
 ```php
 <?php
-    /* --- Server-side sanitation --- */
     function sanitize_input($input) {
         $input = trim($input);
         $input = stripslashes($input);
@@ -719,13 +734,11 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
     $password = isset($_POST["password"]) ? sanitize_input($_POST["password"]) : "";
     $repassword = isset($_POST["repassword"]) ? sanitize_input($_POST["repassword"]) : "";
 
-    /* --- Required field check --- */
     if (empty($name) or empty($email) or empty($username) or empty($password) or empty($repassword)) {
         echo "<script>alert('All fields are required.');window.location='registrationform.php';</script>";
         die();
     }
 
-    /* --- Validate same server-side rules from registrationform.php --- */
     if (!preg_match("/^[a-zA-Z ]+$/", $name)) {
         echo "<script>alert('Invalid name.');window.location='registrationform.php';</script>";
         die();
@@ -742,7 +755,8 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
     }
 
     if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%^&])[\w!@#\$%^&]{8,}$/", $password)) {
-        echo "<script>alert('Password must have at least 8 characters with 1 special symbol !@#\$%^&, 1 number, 1 lowercase, and 1 UPPERCASE.');window.location='registrationform.php';</script>";
+        echo "<script>alert('Password must have at least 8 characters with 1 special symbol 
+            !@#\$%^&, 1 number, 1 lowercase, and 1 UPPERCASE.');window.location='registrationform.php';</script>";
         die();
     }
 
@@ -754,17 +768,17 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
     if (addnewuser($username, $password, $name, $email)) {
         echo "<script>alert('Registration Succeeded! You can now login.');window.location='form.php';</script>";
     } else {
-        echo "<script>alert('Registration Failed! The username or email may already be taken.');window.location='registrationform.php';</script>";
+        echo "<script>alert('Registration Failed! The username or email may already be taken.');
+            window.location='registrationform.php';</script>";
     }
 
     function addnewuser($username, $password, $name, $email) {
-        $mysqli = new mysqli('localhost','munozsa' /*Database username*/,'Sophia13_m' /*Database password*/,'waph' /*Database name*/);
+        $mysqli = new mysqli('localhost','munozsa','Sophia13_m','waph');
         if ($mysqli->connect_errno) {
             printf("Database connection failed: %s\n", $mysqli->connect_error);
             return FALSE;
         }
 
-        /* --- Check for duplicate user or email --- */
         $check_sql = "SELECT username FROM users WHERE username=? OR email=?";
         $check_stmt = $mysqli->prepare($check_sql);
         $check_stmt->bind_param("ss", $username, $email);
@@ -797,8 +811,17 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
     <title>WAPH-Change Password Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript">
-        var EYE_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
-        var EYE_OFF_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a21.8 21.8 0 0 1 5.06-6.94M9.9 4.24A10.94 10.94 0 0 1 12 4c7 0 11 8 11 8a21.8 21.8 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+        var EYE_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" 
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/></svg>';
+        var EYE_OFF_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" 
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a21.8 
+                21.8 0 0 1 5.06-6.94M9.9 4.24A10.94 10.94 0 0 1 12 4c7 0 11 8 
+                11 8a21.8 21.8 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+            <line x1="1" y1="1" x2="23" y2="23"/></svg>';
         function toggle_show(id, btn) {
             var el = document.getElementById(id);
             var showing = el.type === 'password';
@@ -811,14 +834,16 @@ VALUES ('admin', md5('MyPa$$w0rd'), 'Admin User', 'admin@example.com');
 <body>
     <h1>Change Password</h1>
     <form action="changepassword.php" method="POST" class="form login">
-        Username:<!--input type="text" class="text_field" name="username" /--> <?php echo htmlentities($_SESSION["username"]); ?> <br>
+        Username: <?php echo htmlentities($_SESSION["username"]); ?> <br>
         New Password:
         <div class="password-wrapper">
             <input type="password" class="text_field" id="newpassword" name="newpassword"
                 required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&amp;])[\w!@#$%^&amp;]{8,}$"
-                title="Password must have at least 8 characters with 1 special symbol !@#$%^&amp;, 1 number, 1 lowercase, and 1 UPPERCASE"
+                title="Password must have at least 8 characters with 
+                    1 special symbol !@#$%^&amp;, 1 number, 1 lowercase, and 1 UPPERCASE"
                 placeholder="Your new password"
-                onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : ''); form.renewpassword.pattern = this.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');" />
+                onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : ''); 
+                    form.renewpassword.pattern = this.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');" />
             <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="toggle_show('newpassword', this)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             </button>
