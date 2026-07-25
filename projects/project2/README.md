@@ -24,7 +24,7 @@ Individual Project 2 Repository: [https://github.com/munozsophia/waph-munozsa/tr
 
 **Demonstration Video:**
 
-[Click Here to View Project Demo]()
+[Click Here to View Project Demo](https://github.com/user-attachments/assets/8f4dafd7-230b-4efe-9737-fad11bf779cf)
 
 ### Task 1. Functional Requirements
 
