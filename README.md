@@ -18,7 +18,7 @@ Repository's URL: [https://github.com/munozsophia/waph-munozsa.git](https://gith
 
 This is a private repository for Sophia Munoz to store all code from the course. The organization of this repository is as follows.
 
-Latest update: July 22, 2026
+Latest update: July 25, 2026
 
 ### Labs
 

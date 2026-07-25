@@ -24,7 +24,7 @@ Individual Project 2 Repository: [https://github.com/munozsophia/waph-munozsa/tr
 
 **Demonstration Video:**
 
-[Click Here to View Project Attack Demo]()
+[Click Here to View Project Demo]()
 
 ### Task 1. Functional Requirements
 
@@ -120,27 +120,83 @@ In this part, I allowed users to change their passwords securely. To implement t
 
 #### a. Security
 
-The web application is deployed over HTTPS. Passwords are hashed using `md5()` before being stored in the database. Ensure all SQL operations use prepared statements to mitigate SQL injection attacks.
+For security measures I have the web application deployed over HTTPS. The passwords are hashed using `md5()` before being stored in the database like in SQL line shown below. 
+
+```php
+$sql = "SELECT username FROM users WHERE (username=? OR email=?) AND password=md5(?)";
+```
+
+To mitigate SQL injection attacks I used prepared statements and I created a database account for this application to avoid using a root MySQL account. Applying these security measures where there is no SQL concatentation essentially prevents injections from happening even if there is user input.
+
+```php
+$stmt = $mysqli->prepare($sql);
+$stmt->bind_param("sss", $identifier, $identifier, $password);
+$stmt->execute();
+$stmt->bind_result($found_user);
+if ($stmt->fetch()) {
+    return $found_user;
+}
+return FALSE;
+```
 
 #### b. Input Validation
 
-Implement comprehensive input validation on both the client and server sides to prevent common web vulnerabilities such as XSS attacks.
+I also implemented input validation on both the client and server sides to prevent web application vulnerabilities such as Cross-Site Scripting attacks. For the client-side implementation, I used **HTML5** attributes like `required` and `  pattern` on user inputs like the password. For the server-side implementation, I used `preg_match()` to check regular expression rules, `sanitize_input()` function using `trim()`, `stripslashes()`, `htmlspecialchars()` to sanitize user input, and I used `empty()` if a field is required. Finally, I also used `htmlentities()` to ensure that output has a level of protection from XSS in user data.
 
 #### c. Database Design
 
-Design and implement a MySQL database to store user information securely. Ensure that database interactions are performed using secure practices.
+I designed and implemented a MySQL database to store user information securely. The `database-data.sql` users table implementation is below:
+
+```sql
+create table users(
+    username varchar(50) PRIMARY KEY,
+    password varchar(100) NOT NULL,
+    name varchar(100) NOT NULL,
+    email varchar(100) NOT NULL UNIQUE
+);
+```
+
+I expanded the database to hold name and email. The email is also assigned **UNIQUE** as to not allow users to create an account with the same email. As for using the the database, I made sure to used prepared statements.
 
 #### d. Front-End Development
 
-Use HTML, CSS (with an option to integrate a CSS framework or template), and JavaScript to create an intuitive and responsive user interface. Include necessary client-side validations using HTML5 and JavaScript.
+For the front-end development of the web application I used HTML, CSS , and JavaScript to create a fully rounded user interface. For the formatting and look of the web app, I create a `style.css` file that used the same formatting as my Individual Project 1 webpage. I used the color palette, fonts, and basically the same stylesheet in all my PHP pages so that the look of the web app was uniform. Like mentioned before I used **HTML5** `required pattern` and inline JavaScript handlers like `onchange` for client-side validation. I also implemented a very simple password visibility button so that the user can see their password input.
+
+```php
+<script type="text/javascript">
+    var EYE_ICON = '<svg>...</svg>';
+    var EYE_OFF_ICON = '<svg>...</svg>';
+    function toggle_show(id, btn) {
+        var el = document.getElementById(id);
+        var showing = el.type === 'password';
+        el.type = showing ? 'text' : 'password';
+        btn.innerHTML = showing ? EYE_OFF_ICON : EYE_ICON;
+        btn.setAttribute('aria-label', showing ? 'Hide password' : 'Show password');
+    }
+</script>
+```
 
 #### e. Session Management
 
-Implement secure session management for user authentication. Protect against session hijacking and fixation attacks.
+I implemented secure session management for user authentication. I used `session_set_cookie_params()` to configure the cookies. I set `secure` to true to send the cookie over HTTPS. I set `httponly` to true to not allow JavaScript to read the session cookies and in turn XSS attacks. A `seesion_auth.php` page contains user authentication to protect pages like `changepasswordform.php` by just using `require "session_auth.php";` at the top.
+
+```php
+if (isset($_POST["remember"])) {
+    $lifetime = 30 * 24 * 60 * 60; // 30 days
+} else {
+    $lifetime = 15 * 60; // 15 mins
+}
+$path = "/";
+$domain = "munozsa.waph.io";
+$secure = TRUE;
+$httponly = TRUE;
+session_set_cookie_params($lifetime, $path, $domain, $secure, $httponly);
+session_start();
+```
 
 #### f. CSRF Protection
 
-Incorporate mechanisms such as using anti-CSRF tokens to protect against Cross-Site Request Forgery (CSRF) attacks in database modification use cases.
+To incorporate mechanisms like anti-CSRF tokens to protect against Cross-Site Request Forgery attacks in database modification use cases I applied the Secret Validation Token using `bin2hex()` and storing it in `$_SESSION["nocsrftoken"]`. This embeds the token as a hidden field and checks the token against a session token in an action page. The CSRF protection basically prevents an attacker from forging a valid request due to same-origin policy.
 
 ## Appendix: Source Code
 
