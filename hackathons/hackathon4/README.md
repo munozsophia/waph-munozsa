@@ -24,11 +24,24 @@ Hackathon4 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/hackat
 
 #### Step 0 \[Attacker]:
 
-Understand the vulnerable application. We simulate this step on the victim side by logging into the system (use the same username/password as in Hackathon 3, i.e., username is your University's login username, e.g., phungph, and the password is your University's M number, including M, e.g., M150#####) to identify the parameters and answer the following questions in your report:
+Understand the vulnerable application. We simulate this step on the victim side by logging into the system (use the same username/password as in Hackathon 3, i.e., username is your University's login username, e.g., munozsa, and the password is your University's M number, including M, e.g., M15055581) to identify the parameters and answer the following questions in your report:
 
 1. What is the action, i.e., the full URL of the CRSF vulnerability?
+
+The action is [https://waph-hackathon.eastus.cloudapp.azure.com/csrf/changepassword.php](https://waph-hackathon.eastus.cloudapp.azure.com/csrf/changepassword.php).
+
 2. What HTTP method is used for the request?
+
+The HTTP method used for the request is **POST**.
+
 3. What field names are used in the request?
+
+The field name used is `newpassword`.
+
+From the `changepassword.php` page source below, I was able to extract the information above.
+
+![changepassword.php Page Source](../../images/changepassword-page-source.png)
+*changepassword.php Page Source*
 
 #### Step 1 \[Attacker]:
 
@@ -56,4 +69,4 @@ Explain the vulnerabilities exploited in Part I and why the attack was successfu
 
 #### b.
 
-As a developer, describe protection mechanisms that could prevent such attacks, referring to the guidelines presented in the lecture.
+As a developer, describe protection mechanisms that could prevent such attacks, referring to the guidelines presented in the lecture 18.
