@@ -14,9 +14,9 @@
 
 ## The Lab's Overview
 
-For Hackathon 4, there were two parts. In Part I . In Part II.
+For Hackathon 4, there were two parts. In Part I I simulated the attack between the Attacker and the Victim. I first inspected the page source of the `changepassword.php` page to create a CSRF website that could access request to change the victim's password after it was clicked on. I created a comment with CSRF injected and as the Victim I clicked on the comment, explosing the web apps vulnerability. In Part II, I reflected on the reasons for why the CSRF attacks were successful and ways to defend against them.
 
-Outcomes I learned from this hackathon were
+Outcomes I learned from this hackathon were the vulnerabilities of a web application from Cross-Site Request Forgery attacks and how the defenses against them are important to implement to avoid attackers from exploiting these vulnerabilities accessing the database or user accounts.
 
 Hackathon4 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/hackathons/hackathon4](https://github.com/munozsophia/waph-munozsa/tree/main/hackathons/hackathon4).
 
@@ -86,7 +86,7 @@ The demo below showcases the attack's successful execution by having the victim 
 
 #### a. Why do the attacks in Part I happen?
 
-The vulnerabilities exploited in Part I include the server not being able to differentiate between the request referrer and its lack of reauthentication methods for the client for a new request action. The attack was successful because the lack of authentication in changes involving the database should have had the server re-authenticate.
+The vulnerabilities exploited in Part I include the server not being able to differentiate between the request referrer and its lack of reauthentication methods for the client for a new request action. The attack was successful because the lack of authentication in changes involving the database should have had the server re-authenticate. Since it wasn't the hacker was able to appropriate the victim's session and change the password.
 
 #### b. Describe Protection Mechanisms to Prevent Attacks
 
