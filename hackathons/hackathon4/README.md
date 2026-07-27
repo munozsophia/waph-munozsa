@@ -14,7 +14,7 @@
 
 ## The Lab's Overview
 
-For Hackathon 4, there were two parts. In Part I
+For Hackathon 4, there were two parts. In Part I . In Part II.
 
 Outcomes I learned from this hackathon were
 
@@ -43,14 +43,14 @@ From the `changepassword.php` page source below, I was able to extract the infor
 
 #### Step 1 \[Attacker]:
 
-#### a. Construct a CSRF website (hosted on the attacker server) to send an HTTP request to the vulnerable server to change the victim's password.
+#### a. Construct a CSRF Website
 
-I created the `munozsa-csrf.html` page to send an HTTP request to the vulnerable server. Below is the deployed website and the notification alerting the user.
+I created the `munozsa-csrf.html` page to send an HTTP request to the vulnerable server and hosted in the attacker's server. Below is the deployed website and the notification alerting the user.
 
 ![CSRF Website](../../images/csrf-website.png)
 *CSRF Website*
 
-#### b. Create a comment (using Hackathon 3's Blog application) or send a phishing email with the link to trick the victim.
+#### b. Create a Comment
 
 Without loggin in, I submitted the comment below to trick the victim in Hackathon 3's Blog application.
 
@@ -61,7 +61,9 @@ Without loggin in, I submitted the comment below to trick the victim in Hackatho
 ![CSRF Embedded Comment Posted](../../images/csrf-comment-posted.png)
 *CSRF Embedded Comment Posted*
 
-##### i. The site will send an HTTP request to the server to change the victim's password. As the attacker has not authenticated, the request fails.
+##### i. Site Sends HTTP Request to Server
+
+The website now sends an HTTP request to the server to change the victim's password, but since the victim has yet to login and click on the malicious link the attacker not authenticated and the request fails.
 
 ![CSRF Request Failed](../../images/csrf-request-failed.png)
 *CSRF Request Failed*
@@ -72,7 +74,11 @@ For Step 2, as the victim I logged in to the system, opened the comment and clic
 
 **Demonstration Video:**
 
-The demo below showcases the attack's successful execution by having the victim click on the malicious link. At the beginning you can see that the attack is unsuccessful because the victim has yet to login and click on the CSRF website.
+The demo below showcases the attack's successful execution by having the victim click on the malicious link. At the beginning you can see that the attack is unsuccessful because the victim has yet to login and click on the CSRF website. Once the attack occurs, the attacker is able to login with the victim's user and the changed password defined in the `munozsa-csrf.html` website.
+
+```html
+<input type='hidden' name='newpassword' value='munozsahacker' />
+```
 
 [Click Here to View Hackathon 4 Attack Demo](https://github.com/user-attachments/assets/9df1a2b9-30b9-48c3-97c5-cdade3fe3c43)
 
