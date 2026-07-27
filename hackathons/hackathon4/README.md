@@ -71,7 +71,7 @@ Login to the system (use the same username/password as in Hackathon 3, i.e., use
 
 Record a 1.5-minute video demonstrating Steps 1.b.i-5 to showcase the attack's successful execution and illustrate that the attack failed on the attacker's side.
 
-[Click Here to View Hackathon 4 Attack Demo]()
+[Click Here to View Hackathon 4 Attack Demo](https://github.com/user-attachments/assets/9ae48e92-f0ea-4699-a15f-eb75ab9092d0)
 
 ### Part II Understanding the CSRF Vulnerability and Protection Mechanism
 
