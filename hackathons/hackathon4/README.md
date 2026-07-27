@@ -86,8 +86,32 @@ The demo below showcases the attack's successful execution by having the victim 
 
 #### a. Why do the attacks in Part I happen?
 
-Explain the vulnerabilities exploited in Part I and why the attack was successful
+The vulnerabilities exploited in Part I include the server not being able to differentiate between the request referrer and its lack of reauthentication methods for the client for a new request action. The attack was successful because the lack of authentication in changes involving the database should have had the server re-authenticate.
 
-#### b.
+#### b. Describe Protection Mechanisms to Prevent Attacks
 
-As a developer, describe protection mechanisms that could prevent such attacks, referring to the guidelines presented in the lecture 18.
+Potential ways to prevent attacks is to implement a **Secret Validation Token** like `<input type=hidden value=23a3af01b>`, a **Referrer Validation** like `Referrer: http://www.facebook.com/home.php`, or a **Custom Header** like `X-Requested-By: XMLHttpRequest`.
+
+The main implementation of the secret validation token is as follows:
+
+A random token is generated and stored in the session.
+
+```php
+$rand = bin2hex(openssl_random_pseudo_bytes(16));
+$_SESSION["nocsrftoken"] = $rand;
+```
+
+The token is placed in a hidden input within a PHP form page to send to the browser. The token itself belongs solely to an authenticated user.
+
+```php
+<input type="hidden" name="nocsrftoken" value="<?php echo $rand; ?>"/>
+```
+In the PHP action page, the token is retrieved from the PHP form page and is validated. Due to these security measures, the attacker does not have the secret valid token.
+
+```php
+$token = $_POST["nocsrftoken"];
+if (!isset($token) or ($token != $_SESSION["nocsrftoken"])) {
+	echo "CSRF Attack is detected";
+	die();
+}
+```
