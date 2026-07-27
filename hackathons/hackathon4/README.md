@@ -63,6 +63,9 @@ Without loggin in, I submitted the comment below to trick the victim in Hackatho
 
 ##### i. The site will send an HTTP request to the server to change the victim's password. As the attacker has not authenticated, the request fails.
 
+![CSRF Request Failed](../../images/csrf-request-failed.png)
+*CSRF Request Failed*
+
 #### Step 2 \[Victim]:
 
 Login to the system (use the same username/password as in Hackathon 3, i.e., username is your University's login username, e.g., phungph, and the password is your University's M number, including M, e.g., M150#####), and open the comment/email from Step 1.b, and click on the link that the attacker sent. The attack will happen automatically
@@ -71,7 +74,7 @@ Login to the system (use the same username/password as in Hackathon 3, i.e., use
 
 Record a 1.5-minute video demonstrating Steps 1.b.i-5 to showcase the attack's successful execution and illustrate that the attack failed on the attacker's side.
 
-[Click Here to View Hackathon 4 Attack Demo]()
+[Click Here to View Hackathon 4 Attack Demo](https://github.com/user-attachments/assets/9ae48e92-f0ea-4699-a15f-eb75ab9092d0)
 
 ### Part II Understanding the CSRF Vulnerability and Protection Mechanism
 
