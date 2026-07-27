@@ -24,8 +24,6 @@ Hackathon4 Folder: [https://github.com/munozsophia/waph-munozsa/tree/main/hackat
 
 #### Step 0 \[Attacker]:
 
-Understand the vulnerable application. We simulate this step on the victim side by logging into the system (use the same username/password as in Hackathon 3, i.e., username is your University's login username, e.g., munozsa, and the password is your University's M number, including M, e.g., M15055581) to identify the parameters and answer the following questions in your report:
-
 1. What is the action, i.e., the full URL of the CRSF vulnerability?
 
 The action is [https://waph-hackathon.eastus.cloudapp.azure.com/csrf/changepassword.php](https://waph-hackathon.eastus.cloudapp.azure.com/csrf/changepassword.php).
@@ -45,9 +43,23 @@ From the `changepassword.php` page source below, I was able to extract the infor
 
 #### Step 1 \[Attacker]:
 
-#### a. Construct a CSRF website (hosted on the attacker server) to send an HTTP request to the vulnerable server to change the victim's password;
+#### a. Construct a CSRF website (hosted on the attacker server) to send an HTTP request to the vulnerable server to change the victim's password.
+
+I created the `munozsa-csrf.html` page to send an HTTP request to the vulnerable server. Below is the deployed website and the notification alerting the user.
+
+![CSRF Website](../../images/csrf-website.png)
+*CSRF Website*
 
 #### b. Create a comment (using Hackathon 3's Blog application) or send a phishing email with the link to trick the victim.
+
+Without loggin in, I submitted the comment below to trick the victim in Hackathon 3's Blog application.
+
+```html
+<a href="http://192.168.56.101/munozsa-csrf.html">Click here</a> to see your WAPH course grade update!
+```
+
+![CSRF Embedded Comment Posted](../../images/csrf-comment-posted.png)
+*CSRF Embedded Comment Posted*
 
 ##### i. The site will send an HTTP request to the server to change the victim's password. As the attacker has not authenticated, the request fails.
 
