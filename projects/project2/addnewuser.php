@@ -42,7 +42,7 @@
 	}
 
 	if ($password !== $repassword) {
-		echo "<script>alert('Passwords do not match.);window.location='registrationform.php';</script>";
+		echo "<script>alert('Passwords do not match.');window.location='registrationform.php';</script>";
 		die();
 	}
 
